@@ -31,7 +31,7 @@ namespace cheat::feature
 
     void AutoDestroy::DrawMain()
     {
-		ImGui::TextColored(ImColor(255, 165, 0, 255), "Note. This feature is not fully tested detection-wise.\n"
+		ImGui::TextColored(ImColor(254, 89, 0, 255), "Note. This feature is not fully tested detection-wise.\n"
 			"Not recommended for main accounts or used with high values.");
 		
 		ConfigWidget("Enabled", f_Enabled, "Instantly destroys non-living objects within range.");
@@ -39,10 +39,10 @@ namespace cheat::feature
 		ConfigWidget("Ores", f_DestroyOres, "Ores and variants, e.g. electro crystals, marrows, etc.");
 		ConfigWidget("Shields", f_DestroyShields, "Abyss mage/churl/slime shields.");
 		ImGui::SameLine();
-		ImGui::TextColored(ImColor(255, 165, 0, 255), "Extremely risky!");
+		ImGui::TextColored(ImColor(194, 58, 0, 190), "Extremely risky!");
 		ConfigWidget("Doodads", f_DestroyDoodads, "Barrels, boxes, vases, etc.");
 		ImGui::SameLine();
-		ImGui::TextColored(ImColor(255, 165, 0, 255), "Extremely risky!");
+		ImGui::TextColored(ImColor(194, 58, 0, 190), "Extremely risky!");
 		ImGui::Unindent();
 		ConfigWidget("Range (m)", f_Range, 0.1f, 1.0f, 15.0f);
     }

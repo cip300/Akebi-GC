@@ -20,7 +20,7 @@ namespace cheat::feature
 {
 
 	InteractiveMap::InteractiveMap() : Feature(),
-		NFEX(f_Enabled, "Interactive map", "m_InteractiveMap", "InteractiveMap", false, false),
+		NFEX(f_Enabled, "Interactive map", "m_InteractiveMap", "InteractiveMap", true, false),
 		NF(f_SeparatedWindows, "Separated windows", "InteractiveMap", true),
 		NF(f_CompletionLogShow, "Completion log show", "InteractiveMap", false),
 

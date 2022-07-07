@@ -123,6 +123,7 @@ namespace cheat
 
 		manager.SetModuleOrder({
 			"Player",
+			"Miscelaneos",
 			"World",
 			"Teleport",
 			"ESP",
@@ -133,7 +134,7 @@ namespace cheat
 			});
 
 		LPBYTE pFontData = nullptr;
-		DWORD dFontSize = 0;
+		DWORD dFontSize = 20;
 		if (!ResourceLoader::LoadEx("ImGui_Font", RT_RCDATA, pFontData, dFontSize))
 			LOG_WARNING("Failed to get font from resources.");
 

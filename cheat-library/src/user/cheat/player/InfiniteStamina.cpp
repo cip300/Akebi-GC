@@ -8,7 +8,7 @@
 namespace cheat::feature 
 {
     InfiniteStamina::InfiniteStamina() : Feature(),
-        NF(f_Enabled, "Infinite stamina", "InfiniteStamina", false),
+        NF(f_Enabled, "Infinite stamina", "InfiniteStamina", true),
         NF(f_PacketReplacement, "Move sync packet replacement", "InfiniteStamina", false)
     {
 		HookManager::install(app::MoleMole_DataItem_HandleNormalProp, DataItem_HandleNormalProp_Hook);
@@ -18,14 +18,16 @@ namespace cheat::feature
 
     const FeatureGUIInfo& InfiniteStamina::GetGUIInfo() const
     {
-        static const FeatureGUIInfo info { "Infinite Stamina", "Player", true };
+        static const FeatureGUIInfo info { "", "Player", true };
         return info;
     }
 
     void InfiniteStamina::DrawMain()
     {
-		ConfigWidget("Enabled", f_Enabled, "Enables infinite stamina option.");
-
+		ImGui::Spacing();
+		ImGui::Spacing();
+		ConfigWidget("Infinite Stamina", f_Enabled, "Enables infinite stamina option.");
+		ImGui::PopStyleColor();
 		ConfigWidget("Move Sync Packet Replacement", f_PacketReplacement,
 			"This mode prevents sending server packets with stamina cost actions,\n"
 			"e.g. swim, climb, sprint, etc.\n"

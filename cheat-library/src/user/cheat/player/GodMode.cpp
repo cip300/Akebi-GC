@@ -7,7 +7,7 @@
 namespace cheat::feature 
 {
     GodMode::GodMode() : Feature(),
-        NFEX(f_Enabled, "God mode", "m_GodMode", "Player", false, false),
+        NFEX(f_Enabled, "God mode", "m_GodMode", "Player", true, false),
         NF(f_AltGodMode, "Alternative God Mode", "Player", false)
     {
 		HookManager::install(app::VCHumanoidMove_NotifyLandVelocity, VCHumanoidMove_NotifyLandVelocity_Hook);
@@ -28,6 +28,7 @@ namespace cheat::feature
                      "Enables god mode, i.e. no incoming damage.\n" \
                      "May not work with some types of damage.");
         ImGui::Indent();
+        ImGui::SameLine();
         ConfigWidget("Alternative God Mode", f_AltGodMode,
             "Alternative god mode that ignores incoming damage\n" \
             "including environmental damage.");

@@ -15,7 +15,7 @@ namespace cheat::feature
     }
 	const FeatureGUIInfo& AutoSeelie::GetGUIInfo() const
 	{
-		static const FeatureGUIInfo info{ "", "World", true };
+		static const FeatureGUIInfo info{ "", "Miscelaneos", true };
 		return info;
 	}
 
@@ -23,7 +23,7 @@ namespace cheat::feature
     {
         ConfigWidget("Auto seelie", f_Enabled, "Auto follow seelie to its home");
 		ImGui::SameLine();
-		ImGui::TextColored(ImColor(255, 165, 0, 255), "Don't work with Electro Seelies");
+		ImGui::TextColored(ImColor(254, 89, 0, 255), "Don't work with Electro Seelies");
     }
 
 	bool AutoSeelie::NeedStatusDraw() const

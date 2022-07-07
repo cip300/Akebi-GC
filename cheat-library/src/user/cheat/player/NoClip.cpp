@@ -30,13 +30,13 @@ namespace cheat::feature
 
     const FeatureGUIInfo& NoClip::GetGUIInfo() const
     {
-        static const FeatureGUIInfo info{ "No-Clip", "Player", true };
+        static const FeatureGUIInfo info{ ".", "Player", true };
         return info;
     }
 
     void NoClip::DrawMain()
     {
-		ConfigWidget("Enabled", f_Enabled, "Enables no-clip (fast speed + no collision).\n" \
+		ConfigWidget("No clip", f_Enabled, "Enables no-clip (fast speed + no collision).\n" \
             "To move, use WASD, Space (go up), and Shift (go down).");
 
 		ConfigWidget("No Animation", f_NoAnimation, "Disables player animations.");

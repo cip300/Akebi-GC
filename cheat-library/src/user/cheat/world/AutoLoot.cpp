@@ -26,8 +26,8 @@ namespace cheat::feature
 		NF(f_Investigate,	 "Search points",					"AutoLoot", false),
 		NF(f_QuestInteract,  "Quest interacts",					"AutoLoot", false),
         NF(f_Others,		 "Other treasures",					"AutoLoot", false),
-		NF(f_DelayTime,		 "Delay time (in ms)",				"AutoLoot", 150),
-        NF(f_CustomRange,    "Pickup Range",                    "AutoLoot", 5.0f),
+		NF(f_DelayTime,		 "Delay time (in ms)",				"AutoLoot", 280),
+        NF(f_CustomRange,    "Pickup Range",                    "AutoLoot", 40.0f),
 		toBeLootedItems(), nextLootTime(0)
     {
 		// Auto loot
@@ -58,7 +58,7 @@ namespace cheat::feature
 					"Abuse will definitely merit a ban.\n\n" \
 					"If using with custom range, make sure this is turned on FIRST.");
 				ImGui::SameLine();
-				ImGui::TextColored(ImColor(255, 165, 0, 255), "Read the note!");
+				ImGui::TextColored(ImColor(254, 89, 0, 255), "Read the note!");
 			}
 			ImGui::EndGroupPanel();
 			
@@ -68,8 +68,8 @@ namespace cheat::feature
 					"High values are not recommended, as it is easily detected by the server.\n\n" \
 					"If using with auto-pickup/auto-treasure, turn this on LAST.");
 				ImGui::SameLine();
-				ImGui::TextColored(ImColor(255, 165, 0, 255), "Read the note!");
-				ImGui::SetNextItemWidth(100.0f);
+				ImGui::TextColored(ImColor(254, 89, 0, 255), "Read the note!");
+				
 				ConfigWidget("Range (m)", f_CustomRange, 0.1f, 0.5f, 40.0f, "Modifies pickup/open range to this value (in meters).");
 			}
 			ImGui::EndGroupPanel();
@@ -90,7 +90,7 @@ namespace cheat::feature
 					"Abuse will definitely merit a ban.\n\n" \
 					"If using with custom range, make sure this is turned on FIRST.");
 				ImGui::SameLine();
-				ImGui::TextColored(ImColor(255, 165, 0, 255), "Read the note!");
+				ImGui::TextColored(ImColor(254, 89, 0, 255), "Read the note!");
 				ImGui::Indent();
 				ConfigWidget("Chests", f_Chest, "Common, precious, luxurious, etc.");
 				ConfigWidget("Leyline", f_Leyline, "Mora/XP, overworld/Trounce bosses, etc.");

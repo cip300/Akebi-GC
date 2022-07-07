@@ -21,7 +21,7 @@ void ShowHelpText(const char* text)
 
 void HelpMarker(const char* desc)
 {
-    ImGui::TextDisabled("(?)");
+    ImGui::TextDisabled("?");
     if (ImGui::IsItemHovered())
         ShowHelpText(desc);
 }

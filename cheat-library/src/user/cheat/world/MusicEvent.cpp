@@ -33,7 +33,7 @@ namespace cheat::feature
 
     const FeatureGUIInfo& MusicEvent::GetGUIInfo() const
     {
-        static const FeatureGUIInfo info{ "", "World", false };
+        static const FeatureGUIInfo info{ "", "Miscelaneos", false };
         return info;
     }
 

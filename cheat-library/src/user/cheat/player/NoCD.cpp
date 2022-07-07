@@ -17,11 +17,11 @@ namespace cheat::feature
 	static std::list<std::string> abilityLog;
 
     NoCD::NoCD() : Feature(),
-        NF(f_AbilityReduce,      "Reduce Skill/Burst Cooldown",  "NoCD", false),
+        NF(f_AbilityReduce,      "Reduce Skill/Burst Cooldown",  "NoCD", true),
 		NF(f_TimerReduce, "Reduce Timer",        "NoCD", 1.f),
-		NF(f_UtimateMaxEnergy,   "Burst max energy",             "NoCD", false),
-        NF(f_Sprint,             "No Sprint Cooldown",           "NoCD", false),
-		NF(f_InstantBow,         "Instant bow",                  "NoCD", false)
+		NF(f_UtimateMaxEnergy,   "Burst max energy",             "NoCD", true),
+        NF(f_Sprint,             "No Sprint Cooldown",           "NoCD", true),
+		NF(f_InstantBow,         "Instant bow",                  "NoCD", true)
     {
 		HookManager::install(app::MoleMole_LCAvatarCombat_IsEnergyMax, LCAvatarCombat_IsEnergyMax_Hook);
 		HookManager::install(app::MoleMole_LCAvatarCombat_IsSkillInCD_1, LCAvatarCombat_IsSkillInCD_1);
@@ -32,13 +32,12 @@ namespace cheat::feature
 
     const FeatureGUIInfo& NoCD::GetGUIInfo() const
     {
-        static const FeatureGUIInfo info{ "Cooldown Effects", "Player", true };
+        static const FeatureGUIInfo info{ "- Cooldown Effects", "Player", true };
         return info;
     }
 
     void NoCD::DrawMain()
     {
-
 		ConfigWidget("Max Burst Energy", f_UtimateMaxEnergy,
 			"Removes energy requirement for elemental bursts.\n" \
 			"(Energy bubble may appear incomplete but still usable.)");
@@ -54,8 +53,8 @@ namespace cheat::feature
 			"Known issues with Fischl.");
 
     	if (f_InstantBow) {
-			ImGui::Text("If Instant Bow Charge doesn't work:");
-			TextURL("Please contribute to issue on GitHub.", "https://github.com/CallowBlack/genshin-cheat/issues/47", false, false);
+			ImGui::TextColored(ImColor(254, 89, 0, 255), "If Instant Bow Charge doesn't work:");
+			TextURL("Adrees Issues Here", "https://github.com/Akebi-Group/Akebi-GC/issues", false, false);
 			if (ImGui::TreeNode("Ability Log [DEBUG]"))
 			{
 				if (ImGui::Button("Copy to Clipboard"))

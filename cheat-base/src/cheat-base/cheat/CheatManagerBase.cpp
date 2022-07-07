@@ -295,7 +295,7 @@ namespace cheat
 					feature->DrawStatus();
 
 					ImU32 row_bg_color = ImGui::GetColorU32(
-						ImVec4(0.2f + row * 0.1f, 0.1f + row * 0.05f, 0.1f + row * 0.03f, 0.85f));
+						ImVec4(0.169f, 0.341f, 0.38f, 0.85f));
 					ImGui::TableSetBgColor(ImGuiTableBgTarget_RowBg0, row_bg_color);
 					row++;
 				}
@@ -382,7 +382,10 @@ namespace cheat
 			flags |= ImGuiWindowFlags_NoInputs | ImGuiWindowFlags_NoMove;
 
 		if (ImGui::Begin("FPS", nullptr, flags))
-		{
+		{ 
+			ImGui::PushStyleColor(ImGuiCol_TitleBgActive, ImVec4(0.04f, 0.05f, 0.05f, 0.80f));
+			ImGui::PushStyleColor(ImGuiCol_TitleBg, ImVec4(0.04f, 0.05f, 0.05f, 0.80f));
+			ImGui::PushStyleColor(ImGuiCol_WindowBg, ImVec4(0.04f, 0.05f, 0.05f, 0.80f));
 			ImGui::Text("FPS: %.1f", ImGui::GetIO().Framerate);
 			ImGui::End();
 		}

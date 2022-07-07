@@ -27,12 +27,16 @@ namespace cheat::feature
 	}
 	const FeatureGUIInfo& CustomTeleports::GetGUIInfo() const
 	{
-		static const FeatureGUIInfo info{ "Custom Teleports", "Teleport", true };
+		static const FeatureGUIInfo info{ "", "Teleport", true };
 		return info;
 	}
 
 	void CustomTeleports::DrawMain()
 	{
+		ImGui::Spacing();
+		ImGui::Spacing();
+
+		ImGui::Text("Custom Teleport");
 		auto& entityManager = game::EntityManager::instance();
 		auto& MapTeleport = MapTeleport::GetInstance();
 		static std::string teleportName;

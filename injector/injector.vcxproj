@@ -20,6 +20,7 @@
     <ClCompile Include="src\util.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="resource.h" />
     <ClInclude Include="src\injector.h" />
     <ClInclude Include="src\util.h" />
   </ItemGroup>
@@ -27,6 +28,14 @@
     <ProjectReference Include="..\cheat-base\cheat-base.vcxproj">
       <Project>{adb35022-823b-4dc0-b495-3efefbd3a82f}</Project>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="injector.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\..\..\..\Downloads\designbust_genshin_impact_2020_folder_icon512_osY_icon.ico" />
+    <Image Include="E:\Genshin Impact Things\designbust_genshin_impact_2020_folder_icon512_osY_icon.ico" />
+    <Image Include="icon1.ico" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
