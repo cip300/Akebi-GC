@@ -18,7 +18,7 @@ namespace cheat::feature
 		NF(f_InfoMove,   "Move Info Window", "General::InfoWindow", true),
 		NF(f_InfoShow,   "Show Info Window", "General::InfoWindow", true),
 		
-		NF(f_FpsMove, "Move FPS Indicator", "General::FPS", false),
+		NF(f_FpsMove, "Move FPS Indicator", "General::FPS", true),
 		NF(f_FpsShow, "Show FPS Indicator", "General::FPS", true),
 
 		NF(f_NotificationsShow, "Show Notifications", "General::Notify", true), 

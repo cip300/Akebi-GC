@@ -21,7 +21,13 @@ namespace cheat::feature
 
     void EnablePeaking::DrawMain()
     {
+        ImGui::Spacing();
+        ImGui::Spacing();
+        ImGui::Spacing();
         ConfigWidget(f_Enabled, ";)");
+        ImGui::Spacing();
+        ImGui::Spacing();
+        ImGui::Spacing();
     }
 
     bool EnablePeaking::NeedStatusDraw() const

@@ -14,27 +14,28 @@ namespace cheat::feature
 	static void LCAbilityElement_ReduceModifierDurability_Hook(app::LCAbilityElement* __this, int32_t modifierDurabilityIndex, float reduceDurability, app::Nullable_1_Single_ deltaTime, MethodInfo* method);
 
     AutoDestroy::AutoDestroy() : Feature(),
-        NF(f_Enabled,			"Auto Destroy",			"AutoDestroy", false),
-		NF(f_DestroyOres,		"Destroy Ores",			"AutoDestroy", false),
+        NF(f_Enabled,			"Auto Destroy",			"AutoDestroy", true),
+		NF(f_DestroyOres,		"Destroy Ores",			"AutoDestroy", true),
 		NF(f_DestroyShields,	"Destroy Shields",		"AutoDestroy", false),
 		NF(f_DestroyDoodads,	"Destroy Doodads",		"AutoDestroy", false),
-        NF(f_Range,				"Range",				"AutoDestroy", 10.0f)
+        NF(f_Range,				"Range",				"AutoDestroy", 15.0f)
     { 
 		HookManager::install(app::MoleMole_LCAbilityElement_ReduceModifierDurability, LCAbilityElement_ReduceModifierDurability_Hook);
 	}
 
     const FeatureGUIInfo& AutoDestroy::GetGUIInfo() const
     {
-        static const FeatureGUIInfo info { "Auto Destroy Objects", "World", true };
+        static const FeatureGUIInfo info { "", "World", true };
         return info;
     }
 
     void AutoDestroy::DrawMain()
     {
+		ImGui::Spacing();
 		ImGui::TextColored(ImColor(254, 89, 0, 255), "Note. This feature is not fully tested detection-wise.\n"
 			"Not recommended for main accounts or used with high values.");
 		
-		ConfigWidget("Enabled", f_Enabled, "Instantly destroys non-living objects within range.");
+		ConfigWidget("Auto Destroy Objects", f_Enabled, "Instantly destroys non-living objects within range.");
 		ImGui::Indent();
 		ConfigWidget("Ores", f_DestroyOres, "Ores and variants, e.g. electro crystals, marrows, etc.");
 		ConfigWidget("Shields", f_DestroyShields, "Abyss mage/churl/slime shields.");

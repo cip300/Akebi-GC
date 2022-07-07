@@ -14,9 +14,9 @@ namespace cheat::feature
 	static bool LCSelectPickup_IsOutPosition_Hook(void* __this, app::BaseEntity* entity, MethodInfo* method);
 
     AutoLoot::AutoLoot() : Feature(),
-        NF(f_AutoPickup,     "Auto-pickup drops",               "AutoLoot", false),
+        NF(f_AutoPickup,     "Auto-pickup drops",               "AutoLoot", true),
 		NF(f_AutoTreasure,   "Auto-open treasures",             "AutoLoot", false),
-		NF(f_UseCustomRange, "Use custom pickup range",         "AutoLoot", false),
+		NF(f_UseCustomRange, "Use custom pickup range",         "AutoLoot", true),
 		NF(f_PickupFilter,	 "Pickup filter",					"AutoLoot", false),
 		NF(f_PickupFilter_Animals,	 "Animals filter",			"AutoLoot", true),
 		NF(f_PickupFilter_DropItems, "Drop items filter",		"AutoLoot", true),
@@ -51,20 +51,18 @@ namespace cheat::feature
 			ImGui::TableNextRow();
 			ImGui::TableSetColumnIndex(0);
 
-			ImGui::BeginGroupPanel("Auto-Pickup");
+			ImGui::BeginGroupPanel(".");
 			{
-				ConfigWidget("Enabled", f_AutoPickup, "Automatically picks up dropped items.\n" \
+				ConfigWidget("Auto-Pickup", f_AutoPickup, "Automatically picks up dropped items.\n" \
 					"Note: Using this with custom range and low delay times is extremely risky.\n" \
 					"Abuse will definitely merit a ban.\n\n" \
 					"If using with custom range, make sure this is turned on FIRST.");
 				ImGui::SameLine();
 				ImGui::TextColored(ImColor(254, 89, 0, 255), "Read the note!");
 			}
-			ImGui::EndGroupPanel();
 			
-			ImGui::BeginGroupPanel("Custom Pickup Range");
 			{
-				ConfigWidget("Enabled", f_UseCustomRange, "Enable custom pickup range.\n" \
+				ConfigWidget("Custom Pickup Range", f_UseCustomRange, "Enable custom pickup range.\n" \
 					"High values are not recommended, as it is easily detected by the server.\n\n" \
 					"If using with auto-pickup/auto-treasure, turn this on LAST.");
 				ImGui::SameLine();
@@ -79,13 +77,19 @@ namespace cheat::feature
 				ImGui::SetNextItemWidth(100.0f);
 				ConfigWidget("Delay Time (ms)", f_DelayTime, 1, 0, 1000, "Delay (in ms) between loot/open actions.\n" \
 					"Values under 200ms are unsafe.\nNot used if no auto-functions are on.");
+				ImGui::Spacing();
+				ImGui::Spacing();
+				ConfigWidget("Pickup Filter", f_PickupFilter, "Enable pickup filter.\n");
+				ConfigWidget("Animals", f_PickupFilter_Animals, "Fish, Lizard, Frog, Flying animals."); ImGui::SameLine();
+				ConfigWidget("Drop Items", f_PickupFilter_DropItems, "Material, Mineral, Artifact."); ImGui::SameLine();
+				ConfigWidget("Resources", f_PickupFilter_Resources, "Everything beside Animals and Drop Items (Plants, Books, etc).");
 			}
 			ImGui::EndGroupPanel();
 			
 			ImGui::TableSetColumnIndex(1);
-			ImGui::BeginGroupPanel("Auto-Treasure");
+			ImGui::BeginGroupPanel("..");
 			{
-				ConfigWidget("Enabled", f_AutoTreasure, "Automatically opens chests and other treasures.\n" \
+				ConfigWidget("Auto-Treasure", f_AutoTreasure, "Automatically opens chests and other treasures.\n" \
 					"Note: Using this with custom range and low delay times is extremely risky.\n" \
 					"Abuse will definitely merit a ban.\n\n" \
 					"If using with custom range, make sure this is turned on FIRST.");
@@ -103,14 +107,7 @@ namespace cheat::feature
 			ImGui::EndTable();
 		}
 			
-    	ImGui::BeginGroupPanel("Pickup Filter");
-	    {
-			ConfigWidget("Enabled", f_PickupFilter, "Enable pickup filter.\n");
-			ConfigWidget("Animals", f_PickupFilter_Animals, "Fish, Lizard, Frog, Flying animals."); ImGui::SameLine();
-			ConfigWidget("Drop Items", f_PickupFilter_DropItems, "Material, Mineral, Artifact."); ImGui::SameLine();
-			ConfigWidget("Resources", f_PickupFilter_Resources, "Everything beside Animals and Drop Items (Plants, Books, etc).");
-	    }
-    	ImGui::EndGroupPanel();
+    	
     }
 
     bool AutoLoot::NeedStatusDraw() const
