@@ -11,10 +11,10 @@ namespace cheat::feature
     static void CriwareMediaPlayer_Update(app::CriwareMediaPlayer* __this, MethodInfo* method);
 
     DialogSkip::DialogSkip() : Feature(),
-        NF(f_Enabled, "Auto talk", "AutoTalk", false),
+        NF(f_Enabled, "Auto talk", "AutoTalk", true),
         NF(f_AutoSelectDialog, "Auto select dialog", "AutoTalk", true),
         NF(f_ExcludeImportant, "Exclude Katheryne/Tubby/Wagner", "AutoTalk", true),
-        NF(f_FastDialog, "Fast dialog", "AutoTalk", false),
+        NF(f_FastDialog, "Fast dialog", "AutoTalk", true),
         NF(f_CutsceneUSM, "Skip Cutscenes", "AutoTalk", false),
         NF(f_TimeSpeedup, "Time Speed", "AutoTalk", 5.0f)
     {

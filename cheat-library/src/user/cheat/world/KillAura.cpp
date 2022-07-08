@@ -16,7 +16,7 @@ namespace cheat::feature
     KillAura::KillAura() : Feature(),
         NF(f_Enabled,      "Kill aura",                 "KillAura", true),
 		NF(f_DamageMode,   "Damage mode",               "Damage mode", true),
-		NF(f_InstantDeathMode,   "Instant death",       "Instant death", false),
+		NF(f_InstantDeathMode,   "Instant death",       "Instant death", true),
         NF(f_OnlyTargeted, "Only targeted",             "KillAura", false),
         NF(f_Range,        "Range",                     "KillAura", 15.0f),
         NF(f_AttackDelay,  "Attack delay time (in ms)", "KillAura", 100),

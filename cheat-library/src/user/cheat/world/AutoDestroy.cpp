@@ -17,7 +17,7 @@ namespace cheat::feature
         NF(f_Enabled,			"Auto Destroy",			"AutoDestroy", true),
 		NF(f_DestroyOres,		"Destroy Ores",			"AutoDestroy", true),
 		NF(f_DestroyShields,	"Destroy Shields",		"AutoDestroy", false),
-		NF(f_DestroyDoodads,	"Destroy Doodads",		"AutoDestroy", false),
+		NF(f_DestroyDoodads,	"Destroy Doodads",		"AutoDestroy", true),
         NF(f_Range,				"Range",				"AutoDestroy", 15.0f)
     { 
 		HookManager::install(app::MoleMole_LCAbilityElement_ReduceModifierDurability, LCAbilityElement_ReduceModifierDurability_Hook);

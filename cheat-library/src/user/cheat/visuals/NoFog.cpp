@@ -8,7 +8,7 @@ namespace cheat::feature
 {
     static bool _prevEnabledState = false;
     NoFog::NoFog() : Feature(),
-        NFEX(f_Enabled, "No Fog", "NoFog", "Visuals", false, false)
+        NFEX(f_Enabled, "No Fog", "NoFog", "Visuals", true, false)
     {
         events::GameUpdateEvent += MY_METHOD_HANDLER(NoFog::OnGameUpdate);
     }
