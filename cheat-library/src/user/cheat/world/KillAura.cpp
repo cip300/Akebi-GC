@@ -37,6 +37,9 @@ namespace cheat::feature
 		ImGui::Spacing();
 		ImGui::Spacing();
 		ImGui::Spacing();
+		ImGui::Spacing();
+		ImGui::Spacing();
+		ImGui::Spacing();
 		ConfigWidget("Enable Kill Aura", f_Enabled, "Enables kill aura. Need to choose a mode to work.");
 		ImGui::SameLine();
 		ImGui::TextColored(ImColor(254, 89, 0, 255), "Choose any or both modes below.");
@@ -45,10 +48,27 @@ namespace cheat::feature
 		ConfigWidget("Instant Death Mode", f_InstantDeathMode, "Kill aura will attempt to instagib any valid target.");
 		ImGui::SameLine();
 		ImGui::TextColored(ImColor(254, 89, 0, 255), "Can get buggy with bosses like PMA and Hydro Hypo.");
+		
+
+		ImGui::Indent();
+		ImGui::SetNextItemWidth(300.0f);
 		ConfigWidget("Kill Range", f_Range, 0.1f, 5.0f, 100.0f);
+		ImGui::Unindent();
+
 		ConfigWidget("Only Hostile/Aggro", f_OnlyTargeted, "If enabled, kill aura will only affect monsters targeting/aggro towards you.");
+
+		ImGui::Indent();
+		ImGui::SetNextItemWidth(300.0f);
 		ConfigWidget("Crash Attack Delay (ms)", f_AttackDelay, 1, 0, 1000, "Delay in ms before next crash damage.");
+		ImGui::Unindent();
+
+		ImGui::Indent();
+		ImGui::SetNextItemWidth(300.0f);
 		ConfigWidget("Crash Repeat Delay (ms)", f_RepeatDelay, 1, 100, 2000, "Delay in ms before crash damaging same monster.");
+		ImGui::Unindent();
+		ImGui::Spacing();
+		ImGui::Spacing();
+		ImGui::Spacing();
     }
 
     bool KillAura::NeedStatusDraw() const

@@ -124,6 +124,7 @@ namespace cheat
 		manager.SetModuleOrder({
 			"Player",
 			"Miscelaneos",
+			"Vacuum",
 			"World",
 			"Teleport",
 			"ESP",

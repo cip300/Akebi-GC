@@ -45,7 +45,11 @@ namespace cheat::feature
 		ImGui::SameLine();
 		ImGui::TextColored(ImColor(194, 58, 0, 190), "Extremely risky!");
 		ImGui::Unindent();
+		ImGui::SetNextItemWidth(235.0f);
 		ConfigWidget("Range (m)", f_Range, 0.1f, 1.0f, 15.0f);
+		ImGui::Spacing();
+		ImGui::Spacing();
+		ImGui::Spacing();
     }
 
     bool AutoDestroy::NeedStatusDraw() const

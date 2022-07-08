@@ -24,6 +24,8 @@ namespace cheat::feature
 
     void GodMode::DrawMain()
     {
+        ImGui::Spacing();
+        ImGui::Spacing();
         ConfigWidget("God Mode", f_Enabled, 
                      "Enables god mode, i.e. no incoming damage.\n" \
                      "May not work with some types of damage.");

@@ -26,6 +26,10 @@ namespace cheat::feature
     {
 		ImGui::Spacing();
 		ImGui::Spacing();
+		ImGui::Spacing();
+		ImGui::Spacing();
+		ImGui::Spacing();
+		ImGui::Spacing();
 		ConfigWidget("Infinite Stamina", f_Enabled, "Enables infinite stamina option.");
 		ImGui::PopStyleColor();
 		ConfigWidget("Move Sync Packet Replacement", f_PacketReplacement,

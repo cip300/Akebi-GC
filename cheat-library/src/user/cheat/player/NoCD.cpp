@@ -32,20 +32,33 @@ namespace cheat::feature
 
     const FeatureGUIInfo& NoCD::GetGUIInfo() const
     {
-        static const FeatureGUIInfo info{ "- Cooldown Effects", "Player", true };
+        static const FeatureGUIInfo info{ "", "Player", true };
         return info;
     }
 
     void NoCD::DrawMain()
     {
+		ImGui::Spacing();
+		ImGui::Spacing();
+		ImGui::Spacing();
+		ImGui::Spacing();
+		ImGui::Spacing();
+		ImGui::Spacing();
+		ImGui::Text("NoCD");
+		ImGui::Spacing();
 		ConfigWidget("Max Burst Energy", f_UtimateMaxEnergy,
 			"Removes energy requirement for elemental bursts.\n" \
 			"(Energy bubble may appear incomplete but still usable.)");
 
+		
+
+		ImGui::Indent();
 		ConfigWidget("## AbilityReduce", f_AbilityReduce); ImGui::SameLine();
+		ImGui::SetNextItemWidth(300.0f);
 		ConfigWidget("Reduce Skill/Burst Cooldown", f_TimerReduce, 1.f, 1.f, 6.0f,
 			"Reduce cooldowns of elemental skills and bursts.\n"\
 			"1.0 - no CD, 2.0 and higher - increases the timer value.");
+		ImGui::Unindent();
 
     	ConfigWidget(f_Sprint, "Removes delay in-between sprints.");
 
@@ -56,6 +69,7 @@ namespace cheat::feature
 			ImGui::TextColored(ImColor(254, 89, 0, 255), "If Instant Bow Charge doesn't work:");
 			TextURL("Adrees Issues Here", "https://github.com/Akebi-Group/Akebi-GC/issues", false, false);
 			if (ImGui::TreeNode("Ability Log [DEBUG]"))
+			
 			{
 				if (ImGui::Button("Copy to Clipboard"))
 				{
@@ -73,6 +87,12 @@ namespace cheat::feature
 					ImGui::Text(logEntry.c_str());
 
 				ImGui::TreePop();
+				ImGui::Spacing();
+				ImGui::Spacing();
+				ImGui::Spacing();
+				ImGui::Spacing();
+				ImGui::Spacing();
+				ImGui::Spacing();
 			}
 		}
     }

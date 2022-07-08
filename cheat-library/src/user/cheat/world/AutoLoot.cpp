@@ -15,7 +15,7 @@ namespace cheat::feature
 
     AutoLoot::AutoLoot() : Feature(),
         NF(f_AutoPickup,     "Auto-pickup drops",               "AutoLoot", true),
-		NF(f_AutoTreasure,   "Auto-open treasures",             "AutoLoot", false),
+		NF(f_AutoTreasure,   "Auto-open treasures",             "AutoLoot", true),
 		NF(f_UseCustomRange, "Use custom pickup range",         "AutoLoot", true),
 		NF(f_PickupFilter,	 "Pickup filter",					"AutoLoot", false),
 		NF(f_PickupFilter_Animals,	 "Animals filter",			"AutoLoot", true),
@@ -51,7 +51,7 @@ namespace cheat::feature
 			ImGui::TableNextRow();
 			ImGui::TableSetColumnIndex(0);
 
-			ImGui::BeginGroupPanel(".");
+			ImGui::BeginGroupPanel("Pickup");
 			{
 				ConfigWidget("Auto-Pickup", f_AutoPickup, "Automatically picks up dropped items.\n" \
 					"Note: Using this with custom range and low delay times is extremely risky.\n" \
@@ -59,6 +59,9 @@ namespace cheat::feature
 					"If using with custom range, make sure this is turned on FIRST.");
 				ImGui::SameLine();
 				ImGui::TextColored(ImColor(254, 89, 0, 255), "Read the note!");
+				ImGui::Spacing();
+				ImGui::Spacing();
+
 			}
 			
 			{
@@ -67,11 +70,36 @@ namespace cheat::feature
 					"If using with auto-pickup/auto-treasure, turn this on LAST.");
 				ImGui::SameLine();
 				ImGui::TextColored(ImColor(254, 89, 0, 255), "Read the note!");
-				
+				ImGui::SetNextItemWidth(185.0f);
 				ConfigWidget("Range (m)", f_CustomRange, 0.1f, 0.5f, 40.0f, "Modifies pickup/open range to this value (in meters).");
 			}
+
 			ImGui::EndGroupPanel();
-			
+			{
+				ImGui::Spacing();
+				ImGui::Spacing();
+				ImGui::Spacing();
+				ConfigWidget("Auto-Treasure", f_AutoTreasure, "Automatically opens chests and other treasures.\n" \
+					"Note: Using this with custom range and low delay times is extremely risky.\n" \
+					"Abuse will definitely merit a ban.\n\n" \
+					"If using with custom range, make sure this is turned on FIRST.");
+				ImGui::SameLine();
+				ImGui::TextColored(ImColor(254, 89, 0, 255), "Read the note!");
+				ImGui::Indent();
+				ConfigWidget("Chests", f_Chest, "Common, precious, luxurious, etc.");
+				ConfigWidget("Search Points", f_Investigate, "Marked as Investigate/Search, etc.");
+				ImGui::SameLine();
+				ConfigWidget("Leyline", f_Leyline, "Mora/XP, overworld/Trounce bosses, etc.");
+			    ConfigWidget("Quest Interacts", f_QuestInteract, "Valid quest interact points.");
+				ImGui::SameLine();
+				ConfigWidget("Others", f_Others, "Book Pages, Spincrystals, etc.");
+				ImGui::Unindent();
+				ImGui::Spacing();
+				ImGui::Spacing();
+				ImGui::Spacing();
+			}
+
+			ImGui::TableSetColumnIndex(1);
 			ImGui::BeginGroupPanel("Looting Speed");
 			{
 				ImGui::SetNextItemWidth(100.0f);
@@ -86,24 +114,9 @@ namespace cheat::feature
 			}
 			ImGui::EndGroupPanel();
 			
-			ImGui::TableSetColumnIndex(1);
-			ImGui::BeginGroupPanel("..");
-			{
-				ConfigWidget("Auto-Treasure", f_AutoTreasure, "Automatically opens chests and other treasures.\n" \
-					"Note: Using this with custom range and low delay times is extremely risky.\n" \
-					"Abuse will definitely merit a ban.\n\n" \
-					"If using with custom range, make sure this is turned on FIRST.");
-				ImGui::SameLine();
-				ImGui::TextColored(ImColor(254, 89, 0, 255), "Read the note!");
-				ImGui::Indent();
-				ConfigWidget("Chests", f_Chest, "Common, precious, luxurious, etc.");
-				ConfigWidget("Leyline", f_Leyline, "Mora/XP, overworld/Trounce bosses, etc.");
-				ConfigWidget("Search Points", f_Investigate, "Marked as Investigate/Search, etc.");
-				ConfigWidget("Quest Interacts", f_QuestInteract, "Valid quest interact points.");
-				ConfigWidget("Others", f_Others, "Book Pages, Spincrystals, etc.");
-				ImGui::Unindent();
-			}
-			ImGui::EndGroupPanel();
+			
+			
+			
 			ImGui::EndTable();
 		}
 			

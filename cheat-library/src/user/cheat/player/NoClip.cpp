@@ -30,20 +30,25 @@ namespace cheat::feature
 
     const FeatureGUIInfo& NoClip::GetGUIInfo() const
     {
-        static const FeatureGUIInfo info{ ".", "Player", true };
+        static const FeatureGUIInfo info{ "-", "Player", true };
         return info;
     }
 
     void NoClip::DrawMain()
     {
+		ImGui::Spacing();
+		ImGui::Spacing();
 		ConfigWidget("No clip", f_Enabled, "Enables no-clip (fast speed + no collision).\n" \
             "To move, use WASD, Space (go up), and Shift (go down).");
 
 		ConfigWidget("No Animation", f_NoAnimation, "Disables player animations.");
 
+		ImGui::Indent();
+		ImGui::SetNextItemWidth(300.0f);
 		ConfigWidget("Speed", f_Speed, 0.1f, 2.0f, 100.0f,
 			"No-clip move speed.\n" \
 			"Not recommended setting above 5.0.");
+		ImGui::Unindent();
 
 		ConfigWidget("Camera-relative movement", f_CameraRelative,
 			"Move relative to camera view instead of avatar view/direction.");
