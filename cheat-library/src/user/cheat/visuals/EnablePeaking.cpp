@@ -22,7 +22,7 @@ namespace cheat::feature
     void EnablePeaking::DrawMain()
     {
         ImGui::Dummy(ImVec2(0.0f, 20.0f));
-        ConfigWidget(f_Enabled, ";)");
+        ConfigWidget(f_Enabled, "look under skirt ;)");
         ImGui::Dummy(ImVec2(0.0f, 20.0f));
     }
 

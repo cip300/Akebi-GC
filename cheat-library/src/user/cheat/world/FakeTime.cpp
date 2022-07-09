@@ -29,8 +29,14 @@ namespace cheat::feature
 	void FakeTime::DrawMain()
 	{
 		ConfigWidget("Enabled", f_Enabled, "Keep game time the same");
+
+		ImGui::Indent();
 		ConfigWidget("TimeHour", f_TimeHour, 1, 0, 24);
+		ImGui::Unindent();
+
+		ImGui::Indent();
 		ConfigWidget("TimeMinute", f_TimeMinute, 1, 0, 60);
+		ImGui::Unindent();
 	}
 	bool FakeTime::NeedStatusDraw() const
 	{

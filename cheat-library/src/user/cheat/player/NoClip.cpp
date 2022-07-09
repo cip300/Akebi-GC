@@ -41,6 +41,13 @@ namespace cheat::feature
 		ConfigWidget("No clip", f_Enabled, "Enables no-clip (fast speed + no collision).\n" \
             "To move, use WASD, Space (go up), and Shift (go down).");
 
+		ImGui::SameLine();
+		ImGui::Indent(200.0f);
+		ConfigWidget("Alternate No-clip", f_AltSpeedEnabled,
+			"Allows usage of alternate speed when holding down LeftCtrl key.\n" \
+			"Useful if you want to temporarily go faster/slower than the no-clip speed setting.");
+		ImGui::Unindent(200.0f);
+
 		ConfigWidget("No Animation", f_NoAnimation, "Disables player animations.");
 
 		ImGui::Indent();
@@ -53,9 +60,7 @@ namespace cheat::feature
 		ConfigWidget("Camera-relative movement", f_CameraRelative,
 			"Move relative to camera view instead of avatar view/direction.");
 
-		ConfigWidget("Alternate No-clip", f_AltSpeedEnabled,
-			"Allows usage of alternate speed when holding down LeftCtrl key.\n" \
-			"Useful if you want to temporarily go faster/slower than the no-clip speed setting.");
+		
 			
 		if (f_AltSpeedEnabled) {
 			ConfigWidget("Alt Speed", f_AltSpeed, 0.1f, 2.0f, 100.0f,

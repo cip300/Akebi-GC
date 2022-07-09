@@ -33,12 +33,18 @@ namespace cheat::feature
     {
         ConfigWidget("Enabled", f_Enabled, "Automatically continue the dialog.");
 
+        ImGui::Indent();
+        ConfigWidget("Skip Cutscenes", f_CutsceneUSM, "Automatically skips game movies.");
+        ImGui::Unindent();
+
         ImGui::SameLine();
         ImGui::Indent(210.0f);
         ConfigWidget("Auto-select Dialog", f_AutoSelectDialog, "Automatically select dialog choices.");
         ImGui::Unindent(210.0f);
 
-        ConfigWidget("Skip Cutscenes", f_CutsceneUSM, "Automatically skips game movies.");
+        ImGui::Indent();
+        ConfigWidget("Fast Dialog", f_FastDialog, "Speeds up Time");
+        ImGui::Unindent();
 
         ImGui::SameLine();
         if (f_AutoSelectDialog)
@@ -48,14 +54,15 @@ namespace cheat::feature
             ImGui::Unindent(230.0f);
         }
 
-        ConfigWidget("Fast Dialog", f_FastDialog, "Speeds up Time");
+        
         if (f_FastDialog)
         {
             ImGui::Indent();
             ConfigWidget(f_TimeSpeedup, 0.1f, 2.0f, 50.0f, "Time Speedup Multipler \nHigher Values will lead to sync issues with servers \nand is not recommended for Laggy Internet connections.");
             ImGui::Unindent();
+
         }
-        
+        ImGui::Dummy(ImVec2(0.0f, 20.0f));
     }
 
     bool DialogSkip::NeedStatusDraw() const

@@ -131,6 +131,7 @@ namespace cheat
 			"Teleport",
 			"ESP",
 			"Visuals",
+			"Free Camera",
 			"Hotkeys",
 			"Settings",
 			"Debug"
