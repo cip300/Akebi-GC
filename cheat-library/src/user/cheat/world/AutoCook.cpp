@@ -40,10 +40,12 @@ namespace cheat::feature
         ConfigWidget(f_Enabled, "Fast Cooking if the recipe has fast cooking open. \n" \
                 "If fast cooking is closed, you in addition need to turn on Fast Proficiency.");
         ConfigWidget(f_FastProficiency, "Quickly prepare an unstudied recipe to the maximum possible.");
+        ImGui::Indent();
         ConfigWidget("Count Item", f_CountField, 1, 1, 100,
             "How much to cook at a time.\n" \
             "(For standard mode only.)");
         ConfigWidget("Quality Cooking", f_QualityField, 1, 1, 3, "Quality of the cook.");
+        ImGui::Unindent();
     }
 
     bool AutoCook::NeedStatusDraw() const

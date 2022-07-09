@@ -32,19 +32,30 @@ namespace cheat::feature
     void DialogSkip::DrawMain()
     {
         ConfigWidget("Enabled", f_Enabled, "Automatically continue the dialog.");
+
+        ImGui::SameLine();
+        ImGui::Indent(210.0f);
         ConfigWidget("Auto-select Dialog", f_AutoSelectDialog, "Automatically select dialog choices.");
+        ImGui::Unindent(210.0f);
+
+        ConfigWidget("Skip Cutscenes", f_CutsceneUSM, "Automatically skips game movies.");
+
+        ImGui::SameLine();
         if (f_AutoSelectDialog)
         {
-            ImGui::Indent();
+            ImGui::Indent(230.0f);
             ConfigWidget("Exclude Katheryne/Tubby/Wagner", f_ExcludeImportant, "Exclude Kath/Tubby/Wagner from auto-select.");
-            ImGui::Unindent();
+            ImGui::Unindent(230.0f);
         }
+
         ConfigWidget("Fast Dialog", f_FastDialog, "Speeds up Time");
         if (f_FastDialog)
         {
+            ImGui::Indent();
             ConfigWidget(f_TimeSpeedup, 0.1f, 2.0f, 50.0f, "Time Speedup Multipler \nHigher Values will lead to sync issues with servers \nand is not recommended for Laggy Internet connections.");
+            ImGui::Unindent();
         }
-        ConfigWidget("Skip Cutscenes", f_CutsceneUSM, "Automatically skips game movies.");
+        
     }
 
     bool DialogSkip::NeedStatusDraw() const

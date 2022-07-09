@@ -39,6 +39,7 @@ namespace cheat::feature
 
 	void MapTeleport::DrawMain()
 	{
+		ImGui::Dummy(ImVec2(0.0f, 0.0f));
 		ConfigWidget("Map Teleport",
 			f_Enabled,
 			"Enable teleport-to-mark functionality.\n" \
@@ -53,15 +54,18 @@ namespace cheat::feature
 		if (!f_Enabled)
 			ImGui::BeginDisabled();
 
+		ImGui::Indent();
 		ConfigWidget("Override Height (m)", f_DefaultHeight, 1.0F, 200.0F, 800.0F,
 			"If teleport cannot get ground height of target location,\nit will teleport you to the height specified here.\n" \
 			"It is recommended to have this value to be at least as high as a mountain.\nOtherwise, you may fall through the ground.");
+		ImGui::Unindent();
 
 		ConfigWidget("Teleport Key", f_Key, true,
 			"Key to hold down before clicking on target location.");
 
 		if (!f_Enabled)
 			ImGui::EndDisabled();
+		ImGui::Dummy(ImVec2(0.0f, 20.0f));
 	}
 
 	MapTeleport& MapTeleport::GetInstance()

@@ -24,17 +24,17 @@ namespace cheat::feature
 
     void GodMode::DrawMain()
     {
-        ImGui::Spacing();
-        ImGui::Spacing();
+        ImGui::Dummy(ImVec2(0.0f, 0.0f));
+        
         ConfigWidget("God Mode", f_Enabled, 
                      "Enables god mode, i.e. no incoming damage.\n" \
                      "May not work with some types of damage.");
-        ImGui::Indent();
-        ImGui::SameLine();
+        
+       
         ConfigWidget("Alternative God Mode", f_AltGodMode,
             "Alternative god mode that ignores incoming damage\n" \
             "including environmental damage.");
-        ImGui::Unindent();
+       
     }
 
     bool GodMode::NeedStatusDraw() const

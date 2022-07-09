@@ -32,6 +32,8 @@ namespace cheat::feature
 			"Not recommended for main accounts or used with high values.");
 
 		ConfigWidget("Enabled", m_Enabled, "Automatically attack trees in range.");
+
+		ImGui::Indent();
 		ConfigWidget("Attack Delay (ms)", m_AttackDelay, 1, 0, 1000, "Delay before attacking the next tree (in ms).");
 		ConfigWidget("Repeat Delay (ms)", m_RepeatDelay, 1, 500, 1000, "Delay before attacking the same tree (in ms).\nValues <500ms will not work.");
 
@@ -43,6 +45,7 @@ namespace cheat::feature
 
 		ConfigWidget("Range (m)", m_Range, 0.1f, 1.0f, 15.0f);
 		ImGui::TextColored(ImColor(254, 89, 0, 255), "Range is softly limited to ~15m for safety purposes.");
+		ImGui::Unindent();
 	}
 
 	bool AutoTreeFarm::NeedStatusDraw() const

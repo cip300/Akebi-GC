@@ -40,6 +40,8 @@ namespace cheat::feature
             "Mobs within the specified radius will move\nto a specified distance in front of the player.");
 
         bool filtersChanged = false;
+        ImGui::Spacing();
+        
         ImGui::BeginGroupPanel("Monsters");
         {
             filtersChanged |= ConfigWidget(f_IncludeMonsters, "Include monsters in vacuum.");
@@ -48,6 +50,9 @@ namespace cheat::feature
             filtersChanged |= ConfigWidget(f_MonsterBosses, "World and Trounce boss enemies.");
         }
         ImGui::EndGroupPanel();
+
+        ImGui::Spacing();
+        ImGui::Spacing();
         
         ImGui::BeginGroupPanel("Animals");
         {
@@ -60,12 +65,19 @@ namespace cheat::feature
 
         if (filtersChanged)
             UpdateFilters();
+        ImGui::Spacing();
+        ImGui::Spacing();
+        ImGui::Spacing();
+        ImGui::Spacing();
 
     	ConfigWidget("Instant Vacuum", f_Instantly, "Vacuum entities instantly.");
         ConfigWidget("Only Hostile/Aggro", f_OnlyTarget, "If enabled, vacuum will only affect monsters targeting you. Will not affect animals.");
+
+        ImGui::Indent();
         ConfigWidget("Speed", f_Speed, 0.1f, 1.0f, 15.0f, "If 'Instant Vacuum' is not checked, mob will be vacuumed at the specified speed.");
         ConfigWidget("Radius (m)", f_Radius, 0.1f, 5.0f, 150.0f, "Radius of vacuum.");
         ConfigWidget("Distance (m)", f_Distance, 0.1f, 0.5f, 10.0f, "Distance between the player and the monster.");
+        ImGui::Unindent();
     }
 
     bool MobVacuum::NeedStatusDraw() const
