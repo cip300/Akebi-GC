@@ -39,8 +39,11 @@ namespace cheat::feature
     void NoCD::DrawMain()
     {
 		ImGui::Dummy(ImVec2(0.0f, 20.0f));
-		ImGui::Text("NoCD");
-		ImGui::Spacing();
+
+		ImGui::Indent(50.0f);
+		ImGui::TextColored(ImColor(107, 161, 196, 255), "NoCD");
+		ImGui::Unindent(50.0f);
+
 		ConfigWidget("Max Burst Energy", f_UtimateMaxEnergy,
 			"Removes energy requirement for elemental bursts.\n" \
 			"(Energy bubble may appear incomplete but still usable.)");

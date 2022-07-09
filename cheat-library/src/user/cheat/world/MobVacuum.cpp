@@ -42,26 +42,53 @@ namespace cheat::feature
         bool filtersChanged = false;
         ImGui::Spacing();
         
-        ImGui::BeginGroupPanel("Monsters");
-        {
-            filtersChanged |= ConfigWidget(f_IncludeMonsters, "Include monsters in vacuum.");
+        ImGui::Indent(50.0f);
+        ImGui::TextColored(ImColor(107, 161, 196, 255), "Monsters"); ImGui::SameLine();
+        ImGui::Unindent(50.0f);
+
+        ImGui::Indent(300.0f);
+        ImGui::TextColored(ImColor(107, 161, 196, 255), "Animals");
+        ImGui::Unindent(300.0f);
+        
+            filtersChanged |= ConfigWidget(f_IncludeMonsters, "Include monsters in vacuum."); ImGui::SameLine();
+
+            ImGui::Indent(250.0f);
+            filtersChanged |= ConfigWidget(f_IncludeAnimals, "Include animals in vacuum.");
+            ImGui::Unindent(250.0f);
+
             filtersChanged |= ConfigWidget(f_MonsterCommon, "Common enemies."); ImGui::SameLine();
+
+            ImGui::Indent(250.0f);
+            filtersChanged |= ConfigWidget(f_AnimalDrop, "Animals you need to kill before collecting.");
+            ImGui::Unindent(250.0f);
+
+
             filtersChanged |= ConfigWidget(f_MonsterElites, "Elite enemies."); ImGui::SameLine();
-            filtersChanged |= ConfigWidget(f_MonsterBosses, "World and Trounce boss enemies.");
-        }
-        ImGui::EndGroupPanel();
+
+            ImGui::Indent(250.0f);
+            filtersChanged |= ConfigWidget(f_AnimalPickUp, "Animals you can immediately collect.");
+            ImGui::Unindent(250.0f);
+
+            
+            filtersChanged |= ConfigWidget(f_MonsterBosses, "World and Trounce boss enemies."); ImGui::SameLine();
+
+            ImGui::Indent(250.0f);
+            filtersChanged |= ConfigWidget(f_AnimalNPC, "Animals without mechanics.");
+            ImGui::Unindent(250.0f);
+            
+        
 
         ImGui::Spacing();
         ImGui::Spacing();
         
-        ImGui::BeginGroupPanel("Animals");
-        {
-            filtersChanged |= ConfigWidget(f_IncludeAnimals, "Include animals in vacuum.");
-            filtersChanged |= ConfigWidget(f_AnimalDrop, "Animals you need to kill before collecting."); ImGui::SameLine();
-            filtersChanged |= ConfigWidget(f_AnimalPickUp, "Animals you can immediately collect."); ImGui::SameLine();
-            filtersChanged |= ConfigWidget(f_AnimalNPC, "Animals without mechanics.");
-        }
-        ImGui::EndGroupPanel();
+        
+        
+            
+            
+            
+            
+        
+        
 
         if (filtersChanged)
             UpdateFilters();
