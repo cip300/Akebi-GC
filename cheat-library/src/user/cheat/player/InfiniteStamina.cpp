@@ -24,18 +24,16 @@ namespace cheat::feature
 
     void InfiniteStamina::DrawMain()
     {
-		ImGui::Spacing();
-		ImGui::Spacing();
-		ImGui::Spacing();
-		ImGui::Spacing();
-		ImGui::Spacing();
-		ImGui::Spacing();
+		
+		ImGui::Indent(80.0f);
+		
 		ConfigWidget("Infinite Stamina", f_Enabled, "Enables infinite stamina option.");
 		ImGui::PopStyleColor();
 		ConfigWidget("Move Sync Packet Replacement", f_PacketReplacement,
 			"This mode prevents sending server packets with stamina cost actions,\n"
 			"e.g. swim, climb, sprint, etc.\n"
 			"NOTE: This is may be more safe than the standard method. More testing is needed.");
+		ImGui::Unindent(80.0f);
     }
 
     bool InfiniteStamina::NeedStatusDraw() const

@@ -26,14 +26,10 @@ namespace cheat::feature
 
     void PaimonFollow::DrawMain()
     {
-        ImGui::Spacing();
-        ImGui::Spacing();
-        ImGui::Spacing();                  
-        ImGui::Spacing();
+        ImGui::Dummy(ImVec2(0.0f, 20.0f));
         ConfigWidget(f_Enabled, "To display paimon, turn on the function, open the profile (esc) and close it. \n" \
             "If the paimon disappeared after teleportation, do not disable the function, open and close the profile.");
-        ImGui::Spacing();
-        ImGui::Spacing();
+        ImGui::Dummy(ImVec2(0.0f, 20.0f));
     }
 
     bool PaimonFollow::NeedStatusDraw() const

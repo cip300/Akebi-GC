@@ -76,9 +76,7 @@ namespace cheat::feature
 
 			ImGui::EndGroupPanel();
 			{
-				ImGui::Spacing();
-				ImGui::Spacing();
-				ImGui::Spacing();
+				ImGui::Dummy(ImVec2(0.0f, 20.0f));
 				ConfigWidget("Auto-Treasure", f_AutoTreasure, "Automatically opens chests and other treasures.\n" \
 					"Note: Using this with custom range and low delay times is extremely risky.\n" \
 					"Abuse will definitely merit a ban.\n\n" \
@@ -89,14 +87,19 @@ namespace cheat::feature
 				ConfigWidget("Chests", f_Chest, "Common, precious, luxurious, etc.");
 				ConfigWidget("Search Points", f_Investigate, "Marked as Investigate/Search, etc.");
 				ImGui::SameLine();
+
+				ImGui::Indent(190.0f);
 				ConfigWidget("Leyline", f_Leyline, "Mora/XP, overworld/Trounce bosses, etc.");
+				ImGui::Unindent(190.0f);
+
 			    ConfigWidget("Quest Interacts", f_QuestInteract, "Valid quest interact points.");
+				
 				ImGui::SameLine();
+				ImGui::Indent(190.0f);
 				ConfigWidget("Others", f_Others, "Book Pages, Spincrystals, etc.");
-				ImGui::Unindent();
-				ImGui::Spacing();
-				ImGui::Spacing();
-				ImGui::Spacing();
+				ImGui::Unindent(190.0f);
+
+				ImGui::Dummy(ImVec2(0.0f, 20.0f));
 			}
 
 			ImGui::TableSetColumnIndex(1);

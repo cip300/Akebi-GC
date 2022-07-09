@@ -21,6 +21,7 @@ namespace cheat::feature
 
     void AutoSeelie::DrawMain()
     {
+		ImGui::Dummy(ImVec2(0.0f, 0.0f));
         ConfigWidget("Auto seelie", f_Enabled, "Auto follow seelie to its home");
 		ImGui::SameLine();
 		ImGui::TextColored(ImColor(254, 89, 0, 255), "Don't work with Electro Seelies");

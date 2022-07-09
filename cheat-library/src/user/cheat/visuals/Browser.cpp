@@ -27,7 +27,9 @@ namespace cheat::feature
     void Browser::DrawMain()
     {
         ConfigWidget(f_Enabled, "Create in-game Browser");
+        ImGui::Indent();
         ImGui::InputText("URL", &f_URL);
+        ImGui::Unindent();
     }
 
     bool Browser::NeedStatusDraw() const

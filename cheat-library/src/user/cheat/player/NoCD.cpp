@@ -38,12 +38,7 @@ namespace cheat::feature
 
     void NoCD::DrawMain()
     {
-		ImGui::Spacing();
-		ImGui::Spacing();
-		ImGui::Spacing();
-		ImGui::Spacing();
-		ImGui::Spacing();
-		ImGui::Spacing();
+		ImGui::Dummy(ImVec2(0.0f, 20.0f));
 		ImGui::Text("NoCD");
 		ImGui::Spacing();
 		ConfigWidget("Max Burst Energy", f_UtimateMaxEnergy,
@@ -87,12 +82,7 @@ namespace cheat::feature
 					ImGui::Text(logEntry.c_str());
 
 				ImGui::TreePop();
-				ImGui::Spacing();
-				ImGui::Spacing();
-				ImGui::Spacing();
-				ImGui::Spacing();
-				ImGui::Spacing();
-				ImGui::Spacing();
+				ImGui::Dummy(ImVec2(0.0f, 20.0f));
 			}
 		}
     }

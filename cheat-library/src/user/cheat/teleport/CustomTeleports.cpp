@@ -33,8 +33,7 @@ namespace cheat::feature
 
 	void CustomTeleports::DrawMain()
 	{
-		ImGui::Spacing();
-		ImGui::Spacing();
+		ImGui::Dummy(ImVec2(0.0f, 20.0f));
 
 		ImGui::Text("Custom Teleport");
 		auto& entityManager = game::EntityManager::instance();
@@ -175,6 +174,7 @@ namespace cheat::feature
 		ImGui::SameLine();
 		HelpMarker("Warning: This will delete the file from the directory and\nremove the teleport from the list. It will be lost forever.");
 
+		
 		if (ImGui::TreeNode("Teleports"))
 		{
 
@@ -272,8 +272,11 @@ namespace cheat::feature
 				index++;
 			}
 			ImGui::TreePop();
+			ImGui::Dummy(ImVec2(0.0f, 20.0f));
 		}
+		ImGui::Dummy(ImVec2(0.0f, 20.0f));
 	}
+
 
 	bool CustomTeleports::NeedStatusDraw() const
 	{

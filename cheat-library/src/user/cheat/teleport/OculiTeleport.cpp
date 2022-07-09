@@ -6,6 +6,7 @@
 
 namespace cheat::feature 
 {
+
     OculiTeleport::OculiTeleport() : ItemTeleportBase("OculiTeleport", "Oculi")
     { }
 

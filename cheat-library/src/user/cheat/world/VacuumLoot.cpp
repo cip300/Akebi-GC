@@ -27,13 +27,17 @@ namespace cheat::feature
 
 	void VacuumLoot::DrawMain()
 	{
+		ImGui::Spacing();
+		
 		if (ImGui::BeginGroupPanel("Vacuum Loot", false))
 		{
 			ConfigWidget("Enabled", f_Enabled, "Vacuum Loot drops"); ImGui::SameLine(); ImGui::SetNextItemWidth(100.0f);
 			ConfigWidget("Delay Time (ms)", f_DelayTime, 1, 0, 1000, "Delay (in ms) between loot vacuum.");
+			ImGui::Indent();
 			ConfigWidget("Radius (m)", f_Radius, 0.1f, 5.0f, 100.0f, "Radius of loot vacuum.");
 			ConfigWidget("Distance (m)", f_Distance, 0.1f, 1.0f, 10.0f, "Distance between the player and the loot.\n"
 				"Values under 1.5 may be too intruding.");
+			ImGui::Unindent();
 			if (ImGui::TreeNode(this, "Loot Types"))
 			{
 				for (auto& [section, filters] : m_Sections)
@@ -46,6 +50,9 @@ namespace cheat::feature
 			}
 		}
 		ImGui::EndGroupPanel();
+		ImGui::Dummy(ImVec2(0.0f, 20.0f));
+		
+		
 	}
 
 	bool VacuumLoot::NeedStatusDraw() const
