@@ -43,9 +43,10 @@ namespace cheat
 
 		static std::string* current = &m_ModuleOrder[m_SelectedSection];
 
-		ImGui::SetNextWindowSize(ImVec2(600, 300), ImGuiCond_FirstUseEver);
+		ImGui::SetNextWindowSize(ImVec2(979, 913), ImGuiCond_FirstUseEver);
+		ImGui::SetNextWindowPos(ImVec2(447, 64), ImGuiCond_FirstUseEver);
 
-		if (!ImGui::Begin("Akebi-GC"))
+		if (!ImGui::Begin("Akebi-GC Imperial Jade"))
 		{
 			ImGui::End();
 			return;
@@ -266,7 +267,7 @@ namespace cheat
 	void CheatManagerBase::DrawStatus() const
 	{
 		// Drawing status window
-		ImGuiWindowFlags flags = ImGuiWindowFlags_NoDecoration | ImGuiWindowFlags_NoBackground |
+		ImGuiWindowFlags flags = ImGuiWindowFlags_NoDecoration | 
 			ImGuiWindowFlags_NoFocusOnAppearing | ImGuiWindowFlags_NoBringToFrontOnFocus |
 			ImGuiWindowFlags_AlwaysAutoResize | ImGuiWindowFlags_NoCollapse;
 
@@ -274,6 +275,7 @@ namespace cheat
 		if (!settings.f_StatusMove)
 			flags |= ImGuiWindowFlags_NoInputs | ImGuiWindowFlags_NoMove;
 
+		ImGui::SetNextWindowPos(ImVec2(49, 459), ImGuiCond_FirstUseEver);
 		ImGui::Begin("Cheat status", nullptr, flags);
 
 		static ImGuiTableFlags tabFlags = ImGuiTableFlags_Borders | ImGuiTableFlags_RowBg;
@@ -295,7 +297,7 @@ namespace cheat
 					feature->DrawStatus();
 
 					ImU32 row_bg_color = ImGui::GetColorU32(
-						ImVec4(0.169f, 0.341f, 0.38f, 0.85f));
+						ImVec4(0.169f, 0.341f, 0.38f, 0.80f));
 					ImGui::TableSetBgColor(ImGuiTableBgTarget_RowBg0, row_bg_color);
 					row++;
 				}
@@ -323,6 +325,7 @@ namespace cheat
 		if (!showAny && !settings.f_StatusMove)
 			return;
 
+		ImGui::SetNextWindowPos(ImVec2(70, 818), ImGuiCond_FirstUseEver);
 		ImGui::PushStyleColor(ImGuiCol_WindowBg, ImVec4(0.04f, 0.05f, 0.05f, 0.90f));
 		ImGui::Begin("Info window", nullptr, flags);
 		ImGui::PopStyleColor();
@@ -381,6 +384,7 @@ namespace cheat
 		if (!settings.f_FpsMove)
 			flags |= ImGuiWindowFlags_NoInputs | ImGuiWindowFlags_NoMove;
 
+		ImGui::SetNextWindowPos(ImVec2(105, 389), ImGuiCond_FirstUseEver);
 		if (ImGui::Begin("FPS", nullptr, flags))
 		{ 
 			ImGui::PushStyleColor(ImGuiCol_TitleBgActive, ImVec4(0.04f, 0.05f, 0.05f, 0.80f));
