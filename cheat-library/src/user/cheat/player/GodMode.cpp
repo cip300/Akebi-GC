@@ -30,10 +30,12 @@ namespace cheat::feature
                      "Enables god mode, i.e. no incoming damage.\n" \
                      "May not work with some types of damage.");
         
-       
+        ImGui::SameLine();
+        ImGui::Indent(200.0f);
         ConfigWidget("Alternative God Mode", f_AltGodMode,
             "Alternative god mode that ignores incoming damage\n" \
             "including environmental damage.");
+        ImGui::Unindent(200.0f);
        
     }
 

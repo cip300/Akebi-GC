@@ -30,6 +30,7 @@ namespace cheat::feature
         ImGui::Indent();
         ImGui::InputText("URL", &f_URL);
         ImGui::Unindent();
+        ImGui::Dummy(ImVec2(0.0f, 20.0f));
     }
 
     bool Browser::NeedStatusDraw() const

@@ -15,15 +15,15 @@ namespace cheat::feature
 
     const FeatureGUIInfo& EnablePeaking::GetGUIInfo() const
     {
-        static const FeatureGUIInfo info{ "EnablePeaking", "Visuals", false };
+        static const FeatureGUIInfo info{ "Visuals", "Miscelaneos", true };
         return info;
     }
 
     void EnablePeaking::DrawMain()
     {
-        ImGui::Dummy(ImVec2(0.0f, 20.0f));
+        ImGui::Dummy(ImVec2(0.0f, 3.0f));
         ConfigWidget(f_Enabled, "look under skirt ;)");
-        ImGui::Dummy(ImVec2(0.0f, 20.0f));
+        ImGui::Dummy(ImVec2(0.0f, 5.0f));
     }
 
     bool EnablePeaking::NeedStatusDraw() const
