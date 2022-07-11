@@ -34,7 +34,7 @@ namespace cheat::feature
 
     void KillAura::DrawMain()
     {
-		ImGui::Dummy(ImVec2(0.0f, 20.0f));
+		ImGui::Dummy(ImVec2(0.0f, 10.0f));
 		ConfigWidget("Enable Kill Aura", f_Enabled, "Enables kill aura. Need to choose a mode to work.");
 		ImGui::SameLine();
 		ImGui::TextColored(ImColor(254, 89, 0, 255), "Choose any or both modes below.");
@@ -61,7 +61,9 @@ namespace cheat::feature
 		ImGui::SetNextItemWidth(300.0f);
 		ConfigWidget("Crash Repeat Delay (ms)", f_RepeatDelay, 1, 100, 2000, "Delay in ms before crash damaging same monster.");
 		ImGui::Unindent();
-		ImGui::Dummy(ImVec2(0.0f, 20.0f));
+		ImGui::Dummy(ImVec2(0.0f, 10.0f));
+		
+		ImGui::Separator();
     }
 
     bool KillAura::NeedStatusDraw() const

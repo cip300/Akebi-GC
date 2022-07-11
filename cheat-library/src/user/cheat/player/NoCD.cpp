@@ -38,7 +38,7 @@ namespace cheat::feature
 
     void NoCD::DrawMain()
     {
-		ImGui::Dummy(ImVec2(0.0f, 20.0f));
+		ImGui::Dummy(ImVec2(0.0f, 10.0f));
 
 		ImGui::Indent(50.0f);
 		ImGui::TextColored(ImColor(107, 161, 196, 255), "NoCD");
@@ -85,7 +85,8 @@ namespace cheat::feature
 					ImGui::Text(logEntry.c_str());
 
 				ImGui::TreePop();
-				ImGui::Dummy(ImVec2(0.0f, 20.0f));
+				ImGui::Dummy(ImVec2(0.0f, 10.0f));
+				
 			}
 		}
     }
