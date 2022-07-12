@@ -63,7 +63,7 @@ namespace cheat::feature
 		ImGui::Unindent();
 		ImGui::Dummy(ImVec2(0.0f, 10.0f));
 		
-		ImGui::Separator();
+		
     }
 
     bool KillAura::NeedStatusDraw() const

@@ -30,25 +30,33 @@ namespace cheat::feature
 
     const FeatureGUIInfo& NoClip::GetGUIInfo() const
     {
-        static const FeatureGUIInfo info{ "-", "Player", true };
+        static const FeatureGUIInfo info{ "", "Player", true };
         return info;
     }
 
     void NoClip::DrawMain()
     {
-		ImGui::Spacing();
-		ImGui::Spacing();
+		ImGui::Dummy(ImVec2(0.0f, 20.0f));
 		ConfigWidget("No clip", f_Enabled, "Enables no-clip (fast speed + no collision).\n" \
             "To move, use WASD, Space (go up), and Shift (go down).");
 
 		ImGui::SameLine();
 		ImGui::Indent(200.0f);
+		ConfigWidget("No Animation", f_NoAnimation, "Disables player animations.");
+		ImGui::Unindent(200.0f);
+
+		
 		ConfigWidget("Alternate No-clip", f_AltSpeedEnabled,
 			"Allows usage of alternate speed when holding down LeftCtrl key.\n" \
 			"Useful if you want to temporarily go faster/slower than the no-clip speed setting.");
+
+		ImGui::SameLine();
+		ImGui::Indent(200.0f);
+		ConfigWidget("Camera-relative movement", f_CameraRelative,
+			"Move relative to camera view instead of avatar view/direction.");
 		ImGui::Unindent(200.0f);
 
-		ConfigWidget("No Animation", f_NoAnimation, "Disables player animations.");
+		
 
 		ImGui::Indent();
 		ImGui::SetNextItemWidth(300.0f);
@@ -56,19 +64,19 @@ namespace cheat::feature
 			"No-clip move speed.\n" \
 			"Not recommended setting above 5.0.");
 		ImGui::Unindent();
+		ImGui::Dummy(ImVec2(0.0f, 10.0f));
 
-		ConfigWidget("Camera-relative movement", f_CameraRelative,
-			"Move relative to camera view instead of avatar view/direction.");
-
-		
-			
 		if (f_AltSpeedEnabled) {
+			ImGui::Indent();
+			ImGui::SetNextItemWidth(300.0f);
 			ConfigWidget("Alt Speed", f_AltSpeed, 0.1f, 2.0f, 100.0f,
 				"Alternate no-clip move speed.\n" \
 				"Not recommended setting above 5.0.");
 		
 		ConfigWidget("Velocity mode", f_VelocityMode,"Use velocity instead of position to move.");
 		ConfigWidget("Freeflight mode", f_FreeflightMode,"Don't remove collisions");
+		ImGui::Unindent();
+		ImGui::Dummy(ImVec2(0.0f, 10.0f));
 		}
     }
 
