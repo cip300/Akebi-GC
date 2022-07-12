@@ -45,13 +45,10 @@
     </ResourceCompile>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="icon1.ico">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="..\..\..\..\Downloads\designbust_genshin_impact_2020_folder_icon512_osY_icon.ico">
-      <Filter>Resource Files</Filter>
-    </Image>
     <Image Include="E:\Genshin Impact Things\designbust_genshin_impact_2020_folder_icon512_osY_icon.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="designbust_genshin_impact_2020_folder_icon512_osY_icon.ico">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>

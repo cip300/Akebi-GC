@@ -33,9 +33,8 @@
     <ResourceCompile Include="injector.rc" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="..\..\..\..\Downloads\designbust_genshin_impact_2020_folder_icon512_osY_icon.ico" />
+    <Image Include="designbust_genshin_impact_2020_folder_icon512_osY_icon.ico" />
     <Image Include="E:\Genshin Impact Things\designbust_genshin_impact_2020_folder_icon512_osY_icon.ico" />
-    <Image Include="icon1.ico" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
