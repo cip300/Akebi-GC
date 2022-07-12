@@ -36,6 +36,7 @@ namespace cheat::feature
             "Alternative god mode that ignores incoming damage\n" \
             "including environmental damage.");
         ImGui::Unindent(200.0f);
+
        
     }
 

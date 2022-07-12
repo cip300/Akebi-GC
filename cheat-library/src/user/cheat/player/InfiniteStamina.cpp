@@ -35,7 +35,8 @@ namespace cheat::feature
 			"e.g. swim, climb, sprint, etc.\n"
 			"NOTE: This is may be more safe than the standard method. More testing is needed.");
 		ImGui::Unindent(200.0f);
-		
+		ImGui::Dummy(ImVec2(0.0f, 10.0f));
+		ImGui::Separator();
     }
 
     bool InfiniteStamina::NeedStatusDraw() const

@@ -64,14 +64,31 @@ namespace cheat::feature
 	{
 		if (ImGui::BeginGroupPanel("General", true))
 		{
-			ConfigWidget("ESP Enabled", f_Enabled, "Show filtered object through obstacles.");
-			ConfigWidget("Range (m)", f_Range, 1.0f, 1.0f, 200.0f);
 
-			ConfigWidget(f_DrawBoxMode, "Select the mode of box drawing.");
+			ConfigWidget("ESP Enabled", f_Enabled, "Show filtered object through obstacles.");
+
+			ImGui::Indent();
+			ImGui::SetNextItemWidth(400.0f);
+			ConfigWidget("Range (m)", f_Range, 1.0f, 1.0f, 200.0f);
+			ImGui::Unindent();
+			ImGui::Dummy(ImVec2(0.0f, 5.0f));
+
+			ImGui::Indent();
+			ConfigWidget(f_DrawBoxMode, "Select the mode of box drawing."); ImGui::SameLine();
+			ImGui::Unindent();
+
+			ImGui::Indent(300.0f);
 			ConfigWidget(f_DrawTracerMode, "Select the mode of tracer drawing.");
+			ImGui::Unindent(300.0f);
+			ImGui::Dummy(ImVec2(0.0f, 5.0f));
       
 			ConfigWidget(f_Fill);
+
+			ImGui::Indent();
+			ImGui::SetNextItemWidth(300.0f);
 			ConfigWidget(f_FillTransparency, 0.01f, 0.0f, 1.0f, "Transparency of filled part.");
+			ImGui::Unindent();
+
 			ConfigWidget(f_MiddleScreenTracer, "Draw tracer from middle part of the screen.");
 
 			if (f_DrawTracerMode.value() == DrawTracerMode::OffscreenArrows)

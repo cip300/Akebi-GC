@@ -77,7 +77,10 @@ namespace cheat::feature
 		ConfigWidget("Freeflight mode", f_FreeflightMode,"Don't remove collisions");
 		ImGui::Unindent();
 		ImGui::Dummy(ImVec2(0.0f, 10.0f));
+		ImGui::Separator();
 		}
+		ImGui::Dummy(ImVec2(0.0f, 10.0f));
+		ImGui::Separator();
     }
 
     bool NoClip::NeedStatusDraw() const
