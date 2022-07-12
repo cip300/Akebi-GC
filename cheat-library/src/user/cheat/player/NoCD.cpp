@@ -52,7 +52,7 @@ namespace cheat::feature
 
 		ImGui::Indent();
 		ConfigWidget("## AbilityReduce", f_AbilityReduce); ImGui::SameLine();
-		ImGui::SetNextItemWidth(300.0f);
+		ImGui::SetNextItemWidth(280.0f);
 		ConfigWidget("Reduce Skill/Burst Cooldown", f_TimerReduce, 1.f, 1.f, 6.0f,
 			"Reduce cooldowns of elemental skills and bursts.\n"\
 			"1.0 - no CD, 2.0 and higher - increases the timer value.");

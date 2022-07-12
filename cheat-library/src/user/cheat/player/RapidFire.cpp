@@ -79,6 +79,8 @@ namespace cheat::feature
 		ImGui::SetNextItemWidth(300.0f);
 		ConfigWidget("Radius (m)", f_MultiTargetRadius, 0.1f, 5.0f, 50.0f, "Radius to check for valid targets.");
 		ImGui::Unindent();
+		ImGui::Dummy(ImVec2(0.0f, 20.0f));
+		
     }
 
     bool RapidFire::NeedStatusDraw() const

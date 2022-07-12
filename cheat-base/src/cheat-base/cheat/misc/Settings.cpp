@@ -27,7 +27,7 @@ namespace cheat::feature
 		NF(f_FileLogging,    "File Logging",    "General::Logging", false),
 		NF(f_ConsoleLogging, "Console Logging", "General::Logging", true),
 
-		NF(f_FastExitEnable, "Fast Exit", "General::FastExit", false),
+		NF(f_FastExitEnable, "Fast Exit", "General::FastExit", true),
 		NF(f_HotkeyExit, "Hotkeys", "General::FastExit", Hotkey(VK_F12))
 		
     {
@@ -46,27 +46,56 @@ namespace cheat::feature
 
 		ImGui::BeginGroupPanel("General");
 		{
+			ImGui::Dummy(ImVec2(0.0f, 5.0f));
+			ConfigWidget(f_HotkeysEnabled, "Enable hotkeys."); ImGui::SameLine();
+
+			ImGui::Indent(200.0f);
+			ImGui::SetNextItemWidth(200.0f);
 			ConfigWidget(f_MenuKey, false,
 				"Key to toggle main menu visibility. Cannot be empty.\n"\
 				"If you forget this key, you can see or set it in your config file.");
-			ConfigWidget(f_HotkeysEnabled, "Enable hotkeys.");
+			ImGui::Unindent(200.0f);
+
+			ImGui::Dummy(ImVec2(0.0f, 5.0f));          // Set vertical space between the list of items
+
+			ImGui::Indent();
+			ImGui::SetNextItemWidth(380.0f);
 			if (ConfigWidget(f_FontSize, 1, 8, 64, "Font size for cheat interface."))
 			{
+				
 				f_FontSize = std::clamp(f_FontSize.value(), 8, 64);
 				renderer::SetGlobalFontSize(static_cast<float>(f_FontSize));
+				
 			}
+			ImGui::Unindent();
+			ImGui::Dummy(ImVec2(0.0f, 5.0f));
 		}
 		ImGui::EndGroupPanel();
 
-		ImGui::BeginGroupPanel("Logging");
+		
 		{
+
+			ImGui::Dummy(ImVec2(0.0f, 15.0f));
+			ImGui::Indent(8.0f);
 			bool consoleChanged = ConfigWidget(f_ConsoleLogging,
 				"Enable console for logging information (changes will take effect after relaunch)");
 			if (consoleChanged && !f_ConsoleLogging)
 			{
 				Logger::SetLevel(Logger::Level::None, Logger::LoggerType::ConsoleLogger);
 			}
+			ImGui::Unindent(8.0f);
 
+			ImGui::SameLine();
+			ImGui::Indent(208.0f);
+			ConfigWidget("Fast Exit",
+				f_FastExitEnable,
+				"Enable Fast Exit.\n"
+			);
+			if (!f_FastExitEnable)
+				ImGui::BeginDisabled();
+			ImGui::Unindent(208.0f);
+
+			ImGui::Indent(8.0f);
 			bool fileLogging = ConfigWidget(f_FileLogging,
 				"Enable file logging (changes will take effect after relaunch).\n" \
 				"A folder in the app directory will be created for logs.");
@@ -74,53 +103,85 @@ namespace cheat::feature
 			{
 				Logger::SetLevel(Logger::Level::None, Logger::LoggerType::FileLogger);
 			}
-		}
-		ImGui::EndGroupPanel();
+			ImGui::Unindent(8.0f);
 
-		ImGui::BeginGroupPanel("Status Window");
-		{
-			ConfigWidget(f_StatusShow);
-			ConfigWidget(f_StatusMove, "Allow moving of 'Status' window.");
-		}
-		ImGui::EndGroupPanel();
-
-		ImGui::BeginGroupPanel("Info Window");
-		{
-			ConfigWidget(f_InfoShow);
-			ConfigWidget(f_InfoMove, "Allow moving of 'Info' window.");
-		}
-		ImGui::EndGroupPanel();
-
-		ImGui::BeginGroupPanel("FPS indicator");
-		{
-			ConfigWidget(f_FpsShow);
-			ConfigWidget(f_FpsMove, "Allow moving of 'FPS Indicator' window.");
-		}
-		ImGui::EndGroupPanel();
-
-		ImGui::BeginGroupPanel("Show Notifications");
-		{
-			ConfigWidget(f_NotificationsShow, "Notifications on the bottom-right corner of the window will be displayed.");
-			ConfigWidget(f_NotificationsDelay, 1,1,10000, "Delay in milliseconds between notifications.");
-		}
-		ImGui::EndGroupPanel();
-
-		ImGui::BeginGroupPanel("Fast Exit");
-		{
-			ConfigWidget("Enabled",
-				f_FastExitEnable,
-				"Enable Fast Exit.\n" 
-			);
-			if (!f_FastExitEnable)
-				ImGui::BeginDisabled();
-
+			ImGui::SameLine();
+			ImGui::Indent(208.0f);
 			ConfigWidget("Key", f_HotkeyExit, true,
 				"Key to exit the game.");
 
 			if (!f_FastExitEnable)
 				ImGui::EndDisabled();
+			ImGui::Unindent(208.0f);
+			
+
+			ImGui::Dummy(ImVec2(0.0f, 15.0f));
+			
+
+			
+		}
+		
+
+		ImGui::BeginGroupPanel("Widgets Settings");
+		{
+			ImGui::Dummy(ImVec2(0.0f, 5.0f));
+
+			ImGui::Indent(40.0f);
+			ImGui::TextColored(ImColor(107, 161, 196, 255), "Active Features"); ImGui::SameLine();
+			ImGui::Unindent(40.0f);
+
+			ImGui::Indent(240.0f);
+			ImGui::TextColored(ImColor(107, 161, 196, 255), "Teleport info"); ImGui::SameLine();
+			ImGui::Unindent(240.0f);
+
+			ImGui::Indent(462.0f);
+			ImGui::TextColored(ImColor(107, 161, 196, 255), "FPS");
+			ImGui::Unindent(462.0f);
+
+			ConfigWidget(f_StatusShow , "Show the Active Features");
+
+			ImGui::SameLine();
+			ImGui::Indent(200.0f);
+			ConfigWidget(f_InfoShow, "Show the Teleport info widget");
+			ImGui::Unindent(200.0f);
+
+			ImGui::SameLine();
+			ImGui::Indent(400.0f);
+			ConfigWidget(f_FpsShow);
+			ImGui::Unindent(400.0f);
+
+			ConfigWidget(f_StatusMove, "Allow moving of 'Status' window.");
+
+			ImGui::SameLine();
+			ImGui::Indent(200.0f);
+			ConfigWidget(f_InfoMove, "Allow moving of 'Info' window.");
+			ImGui::Unindent(200.0f);
+
+			ImGui::SameLine();
+			ImGui::Indent(400.0f);
+			ConfigWidget(f_FpsMove, "Allow moving of 'FPS Indicator' window.");
+			ImGui::Unindent(400.0f);
+			
+			ImGui::Dummy(ImVec2(0.0f, 15.0f));
+			
 		}
 		ImGui::EndGroupPanel();
+
+
+		ImGui::BeginGroupPanel("Show Notifications");
+		{
+			ImGui::Dummy(ImVec2(0.0f, 5.0f));
+			ConfigWidget(f_NotificationsShow, "Notifications on the bottom-right corner of the window will be displayed.");
+
+			ImGui::Indent();
+			ImGui::SetNextItemWidth(380.0f);
+			ConfigWidget(f_NotificationsDelay, 1,1,10000, "Delay in milliseconds between notifications.");
+			ImGui::Unindent();
+			ImGui::Dummy(ImVec2(0.0f, 5.0f));
+		}
+		ImGui::EndGroupPanel();
+
+		
 	}
 
     Settings& Settings::GetInstance()

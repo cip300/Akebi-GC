@@ -61,7 +61,9 @@ namespace cheat::feature
 		ImGui::SetNextItemWidth(300.0f);
 		ConfigWidget("Crash Repeat Delay (ms)", f_RepeatDelay, 1, 100, 2000, "Delay in ms before crash damaging same monster.");
 		ImGui::Unindent();
-		ImGui::Dummy(ImVec2(0.0f, 20.0f));
+		ImGui::Dummy(ImVec2(0.0f, 10.0f));
+		
+		
     }
 
     bool KillAura::NeedStatusDraw() const
