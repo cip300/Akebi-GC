@@ -326,7 +326,7 @@ namespace cheat
 			return;
 
 		ImGui::SetNextWindowPos(ImVec2(70, 818), ImGuiCond_FirstUseEver);
-		ImGui::PushStyleColor(ImGuiCol_WindowBg, ImVec4(0.04f, 0.05f, 0.05f, 0.90f));
+		ImGui::PushStyleColor(ImGuiCol_WindowBg, ImVec4(0.082f, 0.106f, 0.106f, 0.80f));
 		ImGui::Begin("Info window", nullptr, flags);
 		ImGui::PopStyleColor();
 
