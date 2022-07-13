@@ -10,11 +10,12 @@ namespace cheat::game
         public IEntityFilter
     {
 	public:
-        SimpleFilter(app::EntityType__Enum_1 type, std::initializer_list<std::string> names = {}) : m_Type(type), m_Names{ names } {}
-        SimpleFilter(app::EntityType__Enum_1 type, const std::string& name) : SimpleFilter(type, {name}) {}
-        SimpleFilter(std::initializer_list<SimpleFilter> lst);
+
+        SimpleFilter(app::EntityType__Enum_1 type, const std::vector<std::string>& names = {});
+        SimpleFilter(app::EntityType__Enum_1 type, const std::string name) : SimpleFilter(type, std::vector<std::string>{name}) {}
         bool IsValid(Entity* entity) const override;
-    protected:
+        friend SimpleFilter operator+(SimpleFilter lFilter, const SimpleFilter& rFilter);
+    private:
 		app::EntityType__Enum_1 m_Type;
         std::vector<std::string> m_Names;
     };
