@@ -110,6 +110,7 @@ namespace cheat::feature
 		return info;
 	}
 
+
 	void InteractiveMap::DrawMain() { }
 
 	void InteractiveMap::DrawMenu()
@@ -200,7 +201,9 @@ namespace cheat::feature
 			"Thats all for now. Happy using ^)"
 		);
 		if (searchFixed)
+			ImGui::PushStyleColor(ImGuiCol_WindowBg, ImVec4(0.996f, 0.349f, 0.0f, 0.95f));
 			ImGui::BeginChild("FiltersList", ImVec2(-1, 0), false, ImGuiWindowFlags_NoBackground);
+			ImGui::PopStyleColor();
 
 		auto& categories = m_ScenesData[sceneID].categories;
 		for (auto& [categoryName, labels] : categories)
@@ -1412,6 +1415,7 @@ namespace cheat::feature
 
 		// Draw windows
 		{
+			ImGui::PushStyleColor(ImGuiCol_WindowBg, ImVec4(0.106f, 0.094f, 0.118f, 0.95f));
 			std::lock_guard _rectGuard(_windowRectsMutex);
 			
 			_windowRects.clear();
@@ -1441,6 +1445,7 @@ namespace cheat::feature
 
 				ImGui::End();
 			}
+			ImGui::PopStyleColor();
 		}
 
 		if (!f_Enabled)
