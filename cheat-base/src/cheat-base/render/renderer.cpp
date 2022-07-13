@@ -312,13 +312,13 @@ namespace renderer
 #define RGBA_TO_FLOAT(r,g,b,a) (float)r/255.0f, (float)g/255.0f, (float)b/255.0f, (float)a/255.0f
 		ImVec4* colors = ImGui::GetStyle().Colors;
 		colors[ImGuiCol_Text] = ImVec4(0.95f, 0.96f, 0.98f, 1.00f);
-		colors[ImGuiCol_TextDisabled] = ImVec4(RGBA_TO_FLOAT(34, 132, 122, 253));
+		colors[ImGuiCol_TextDisabled] = ImVec4(0.133f, 0.518f, 0.478f, 0.95f);
 		colors[ImGuiCol_WindowBg] = ImVec4(0.14f, 0.18f, 0.22f, 0.85f);
 		colors[ImGuiCol_ChildBg] = ImVec4(0.14f, 0.18f, 0.22f, 0.85f);
 		colors[ImGuiCol_PopupBg] = ImVec4(0.08f, 0.09f, 0.11f, 0.94f);
 		colors[ImGuiCol_Border] = ImVec4(0.15f, 0.22f, 0.25f, 1.00f);
 		colors[ImGuiCol_BorderShadow] = ImVec4(0.20f, 0.20f, 0.20f, 0.00f);
-		colors[ImGuiCol_FrameBg] = ImVec4(RGBA_TO_FLOAT(43, 87, 97, 190));
+		colors[ImGuiCol_FrameBg] = ImVec4(0.169f, 0.341f, 0.38f, 0.95f);
 		colors[ImGuiCol_FrameBgHovered] = ImVec4(0.15f, 0.19f, 0.24f, 1.00f);
 		colors[ImGuiCol_FrameBgActive] = ImVec4(0.19f, 0.22f, 0.24f, 1.00f);
 		colors[ImGuiCol_TitleBg] = ImVec4(0.14f, 0.18f, 0.22f, 0.85f);
@@ -338,7 +338,7 @@ namespace renderer
 		colors[ImGuiCol_Header] = ImVec4(RGBA_TO_FLOAT(194, 58, 0, 90));
 		colors[ImGuiCol_HeaderHovered] = ImVec4(0.12f, 0.16f, 0.20f, 0.80f);
 		colors[ImGuiCol_HeaderActive] = ImVec4(0.00f, 0.44f, 0.92f, 1.00f);
-		colors[ImGuiCol_Separator] = ImVec4(0.20f, 0.25f, 0.29f, 1.00f);
+		colors[ImGuiCol_Separator] = ImVec4(0.169f, 0.341f, 0.38f, 0.70f);
 		colors[ImGuiCol_SeparatorHovered] = ImVec4(0.31f, 0.45f, 0.60f, 0.78f);
 		colors[ImGuiCol_SeparatorActive] = ImVec4(0.42f, 0.57f, 0.75f, 1.00f);
 		colors[ImGuiCol_ResizeGrip] = ImVec4(0.64f, 0.79f, 0.98f, 0.25f);
