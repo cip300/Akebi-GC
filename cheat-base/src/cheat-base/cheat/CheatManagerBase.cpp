@@ -267,7 +267,7 @@ namespace cheat
 	void CheatManagerBase::DrawStatus() const
 	{
 		// Drawing status window
-		ImGuiWindowFlags flags = ImGuiWindowFlags_NoDecoration | 
+		ImGuiWindowFlags flags = ImGuiWindowFlags_NoDecoration | ImGuiWindowFlags_NoBackground |
 			ImGuiWindowFlags_NoFocusOnAppearing | ImGuiWindowFlags_NoBringToFrontOnFocus |
 			ImGuiWindowFlags_AlwaysAutoResize | ImGuiWindowFlags_NoCollapse;
 
@@ -297,7 +297,7 @@ namespace cheat
 					feature->DrawStatus();
 
 					ImU32 row_bg_color = ImGui::GetColorU32(
-						ImVec4(0.0f, 0.122f, 0.150f, 0.85));
+						ImVec4(0.0f, 0.122f, 0.150f, 0.75));
 					ImGui::TableSetBgColor(ImGuiTableBgTarget_RowBg0, row_bg_color);
 					row++;
 				}
@@ -326,7 +326,7 @@ namespace cheat
 			return;
 
 		ImGui::SetNextWindowPos(ImVec2(70, 818), ImGuiCond_FirstUseEver);
-		ImGui::PushStyleColor(ImGuiCol_WindowBg, ImVec4(0.082f, 0.106f, 0.106f, 0.80f));
+		ImGui::PushStyleColor(ImGuiCol_WindowBg, ImVec4(0.0f, 0.122f, 0.150f, 0.75));
 		ImGui::Begin("Info window", nullptr, flags);
 		ImGui::PopStyleColor();
 
