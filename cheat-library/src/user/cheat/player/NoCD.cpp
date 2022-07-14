@@ -85,7 +85,7 @@ namespace cheat::feature
 					ImGui::Text(logEntry.c_str());
 
 				ImGui::TreePop();
-				ImGui::Dummy(ImVec2(0.0f, 10.0f));
+				
 				
 			}
 		}

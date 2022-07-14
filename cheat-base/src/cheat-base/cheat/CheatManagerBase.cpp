@@ -297,7 +297,7 @@ namespace cheat
 					feature->DrawStatus();
 
 					ImU32 row_bg_color = ImGui::GetColorU32(
-						ImVec4(0.169f, 0.341f, 0.38f, 0.80f));
+						ImVec4(0.0f, 0.122f, 0.150f, 0.85));
 					ImGui::TableSetBgColor(ImGuiTableBgTarget_RowBg0, row_bg_color);
 					row++;
 				}
