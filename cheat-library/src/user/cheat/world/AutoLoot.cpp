@@ -63,7 +63,7 @@ namespace cheat::feature
 					"Abuse will definitely merit a ban.\n\n" \
 					"If using with custom range, make sure this is turned on FIRST.");
 				ImGui::SameLine();
-				ImGui::TextColored(ImColor(255, 165, 0, 255), "Read the note!");
+				ImGui::TextColored(ImColor(255, 155, 112, 240), "Read the note!");
 			}
 			ImGui::EndGroupPanel();
 			
@@ -73,7 +73,7 @@ namespace cheat::feature
 					"High values are not recommended, as it is easily detected by the server.\n\n" \
 					"If using with auto-pickup/auto-treasure, turn this on LAST.");
 				ImGui::SameLine();
-				ImGui::TextColored(ImColor(255, 165, 0, 255), "Read the note!");
+				ImGui::TextColored(ImColor(255, 155, 112, 240), "Read the note!");
 				ImGui::SetNextItemWidth(100.0f);
 				ConfigWidget("Range (m)", f_CustomRange, 0.1f, 0.5f, 40.0f, "Modifies pickup/open range to this value (in meters).");
 			}
@@ -92,7 +92,7 @@ namespace cheat::feature
 				ConfigWidget("Enabled", f_UseDelayTimeFluctuation, "Enable delay fluctuation.\n" \
 					"Simulates human clicking delay as manual clickling never consistent.");
 				ImGui::SameLine();
-				ImGui::TextColored(ImColor(255, 165, 0, 255), "Read the note!");
+				ImGui::TextColored(ImColor(255, 155, 112, 240), "Read the note!");
 				ImGui::SetNextItemWidth(100.0f);
 				ConfigWidget("Delay range +(ms)", f_DelayTimeFluctuation, 1, 0, 1000, "Delay randomly fluctuates between 'Delay Time'+'Delay Time+range'");
 			}
@@ -106,7 +106,7 @@ namespace cheat::feature
 					"Abuse will definitely merit a ban.\n\n" \
 					"If using with custom range, make sure this is turned on FIRST.");
 				ImGui::SameLine();
-				ImGui::TextColored(ImColor(255, 165, 0, 255), "Read the note!");
+				ImGui::TextColored(ImColor(255, 155, 112, 240), "Read the note!");
 				ImGui::Indent();
 				ConfigWidget("Chests", f_Chest, "Common, precious, luxurious, etc.");
 				ConfigWidget("Leyline", f_Leyline, "Mora/XP, overworld/Trounce bosses, etc.");

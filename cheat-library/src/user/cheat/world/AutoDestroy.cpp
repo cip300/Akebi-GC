@@ -45,10 +45,10 @@ namespace cheat::feature
 		ConfigWidget("Plants", f_DestroyPlants, "Dandelion Seeds, Sakura Bloom, etc.");
 		ConfigWidget("Special Objects", f_DestroySpecialObjects, "Destroy Ancient Rime, Large and Small Rock Piles");
 		ImGui::SameLine();
-		ImGui::TextColored(ImColor(255, 155, 112, 0.75), "Risk Unknown!");
+		ImGui::TextColored(ImColor(255, 155, 112, 240), "Risk Unknown!");
 		ConfigWidget("Special Chests", f_DestroySpecialChests, "Destroy Chests with Brambles, Frozen, or In Rocks");
 		ImGui::SameLine();
-		ImGui::TextColored(ImColor(255, 155, 112, 0.75), "Risk Unknown!");
+		ImGui::TextColored(ImColor(255, 155, 112, 240), "Risk Unknown!");
 		ImGui::Unindent();
 		ConfigWidget("Range (m)", f_Range, 0.1f, 1.0f, 15.0f);
 	}

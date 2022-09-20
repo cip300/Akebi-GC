@@ -28,8 +28,7 @@ namespace cheat::feature
 
 	void AutoTreeFarm::DrawMain()
 	{
-		ImGui::TextColored(ImColor(255, 165, 0, 255), "Note. This feature is not fully tested detection-wise.\n"
-			"Not recommended for main accounts or used with high values.");
+	
 
 		ConfigWidget("Enabled", m_Enabled, "Automatically attack trees in range.");
 		ConfigWidget("Attack Delay (ms)", m_AttackDelay, 1, 0, 1000, "Delay before attacking the next tree (in ms).");
@@ -42,7 +41,7 @@ namespace cheat::feature
 		);
 
 		ConfigWidget("Range (m)", m_Range, 0.1f, 1.0f, 15.0f);
-		ImGui::TextColored(ImColor(255, 165, 0, 255), "Range is softly limited to ~15m for safety purposes.");
+		ImGui::TextColored(ImColor(255, 155, 112, 240), "Range is softly limited to ~15m for safety purposes.");
 	}
 
 	bool AutoTreeFarm::NeedStatusDraw() const
