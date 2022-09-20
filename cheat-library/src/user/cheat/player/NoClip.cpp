@@ -39,7 +39,7 @@ namespace cheat::feature
 
 	const FeatureGUIInfo& NoClip::GetGUIInfo() const
 	{
-		static const FeatureGUIInfo info{ "No-Clip", "Player", true };
+		static const FeatureGUIInfo info{ "No-Clip", "Movement", true };
 		return info;
 	}
 

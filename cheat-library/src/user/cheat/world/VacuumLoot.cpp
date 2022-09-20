@@ -22,7 +22,7 @@ namespace cheat::feature
 
 	const FeatureGUIInfo& VacuumLoot::GetGUIInfo() const
 	{
-		static const FeatureGUIInfo info{ "Vacuum Loot", "World", true };
+		static const FeatureGUIInfo info{ "", "Vacuum", true };
 		return info;
 	}
 

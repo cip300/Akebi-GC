@@ -21,7 +21,7 @@ namespace cheat::feature
 
 	const FeatureGUIInfo& OpenTeamImmediately::GetGUIInfo() const
 	{
-		static const FeatureGUIInfo info{ "", "World", false };
+		static const FeatureGUIInfo info{ "", "Miscelaneos", false };
 		return info;
 	}
 

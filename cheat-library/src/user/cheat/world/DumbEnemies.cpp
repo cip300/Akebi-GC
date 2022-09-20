@@ -15,7 +15,7 @@ namespace cheat::feature
 
     const FeatureGUIInfo& DumbEnemies::GetGUIInfo() const
     {
-        static const FeatureGUIInfo info{ "", "World", false };
+        static const FeatureGUIInfo info{ "", "Miscelaneos", false };
         return info;
     }
 

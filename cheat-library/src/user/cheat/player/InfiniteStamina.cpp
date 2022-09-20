@@ -18,7 +18,7 @@ namespace cheat::feature
 
     const FeatureGUIInfo& InfiniteStamina::GetGUIInfo() const
     {
-        static const FeatureGUIInfo info { "Infinite Stamina", "Player", true };
+        static const FeatureGUIInfo info { "Infinite Stamina", "Movement", true };
         return info;
     }
 

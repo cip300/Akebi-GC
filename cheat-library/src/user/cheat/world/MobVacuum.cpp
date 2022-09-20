@@ -31,7 +31,7 @@ namespace cheat::feature
 
     const FeatureGUIInfo& MobVacuum::GetGUIInfo() const
     {
-        static const FeatureGUIInfo info{ "Mob Vacuum", "World", true };
+        static const FeatureGUIInfo info{ "Mob Vacuum", "Vacuum", true };
         return info;
     }
 

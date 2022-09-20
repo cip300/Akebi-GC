@@ -17,7 +17,7 @@ namespace cheat::feature
 
     const FeatureGUIInfo& GameSpeed::GetGUIInfo() const
     {
-        static const FeatureGUIInfo info{ "GameSpeed", "World", true };
+        static const FeatureGUIInfo info{ "GameSpeed", "Movement", true };
         return info;
     }
 

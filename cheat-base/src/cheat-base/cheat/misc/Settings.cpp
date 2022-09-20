@@ -422,24 +422,47 @@ namespace cheat::feature
 		}
 		ImGui::EndGroupPanel();
 
-		ImGui::BeginGroupPanel("Status Window");
+		ImGui::BeginGroupPanel("Widgets Settings");
 		{
-			ConfigWidget(f_StatusShow);
-			ConfigWidget(f_StatusMove, "Allow moving of 'Status' window.");
-		}
-		ImGui::EndGroupPanel();
+			ImGui::Dummy(ImVec2(0.0f, 5.0f));
 
-		ImGui::BeginGroupPanel("Info Window");
-		{
-			ConfigWidget(f_InfoShow);
-			ConfigWidget(f_InfoMove, "Allow moving of 'Info' window.");
-		}
-		ImGui::EndGroupPanel();
+			ImGui::Indent(40.0f);
+			ImGui::TextColored(ImColor(107, 161, 196, 255), "Active Features"); ImGui::SameLine();
+			ImGui::Unindent(40.0f);
 
-		ImGui::BeginGroupPanel("FPS indicator");
-		{
+			ImGui::Indent(240.0f);
+			ImGui::TextColored(ImColor(107, 161, 196, 255), "Teleport info"); ImGui::SameLine();
+			ImGui::Unindent(240.0f);
+
+			ImGui::Indent(462.0f);
+			ImGui::TextColored(ImColor(107, 161, 196, 255), "FPS");
+			ImGui::Unindent(462.0f);
+
+			ConfigWidget(f_StatusShow, "Show the Active Features");
+
+			ImGui::SameLine();
+			ImGui::Indent(200.0f);
+			ConfigWidget(f_InfoShow, "Show the Teleport info widget");
+			ImGui::Unindent(200.0f);
+
+			ImGui::SameLine();
+			ImGui::Indent(400.0f);
 			ConfigWidget(f_FpsShow);
+			ImGui::Unindent(400.0f);
+
+			ConfigWidget(f_StatusMove, "Allow moving of 'Status' window.");
+
+			ImGui::SameLine();
+			ImGui::Indent(200.0f);
+			ConfigWidget(f_InfoMove, "Allow moving of 'Info' window.");
+			ImGui::Unindent(200.0f);
+
+			ImGui::SameLine();
+			ImGui::Indent(400.0f);
 			ConfigWidget(f_FpsMove, "Allow moving of 'FPS Indicator' window.");
+			ImGui::Unindent(400.0f);
+
+			ImGui::Dummy(ImVec2(0.0f, 15.0f));
 		}
 		ImGui::EndGroupPanel();
 

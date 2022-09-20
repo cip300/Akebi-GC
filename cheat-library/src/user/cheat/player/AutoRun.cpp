@@ -19,7 +19,7 @@ namespace cheat::feature
 
 	const FeatureGUIInfo& AutoRun::GetGUIInfo() const
 	{
-		static const FeatureGUIInfo info{ "Auto Run", "Player", true };
+		static const FeatureGUIInfo info{ "Auto Run", "Movement", true };
 		return info;
 	}
 

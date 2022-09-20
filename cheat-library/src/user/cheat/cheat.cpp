@@ -141,13 +141,16 @@ namespace cheat
 
 		manager.SetModuleOrder({
 			"Player",
+			"Miscelaneos",                                                                    // New added
+			"Movement",
+			"Vacuum",                                                                         // New added
 			"World",
 			"Teleport",
 			"ESP",
 			"Visuals",
+			"Free Camera",                                                                    // New added
 			"Hotkeys",
 			"Settings",
-			"About",
 			"Debug"
 			});
 

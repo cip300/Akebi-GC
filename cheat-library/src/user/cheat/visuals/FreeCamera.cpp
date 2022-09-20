@@ -54,7 +54,7 @@ namespace cheat::feature
 
 	const FeatureGUIInfo& FreeCamera::GetGUIInfo() const
 	{
-		static const FeatureGUIInfo info{ "Free Camera", "Visuals", true };
+		static const FeatureGUIInfo info{ "Free Camera", "Free Camera", true };
 		return info;
 	}
 
