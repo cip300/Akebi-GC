@@ -31,7 +31,7 @@ namespace cheat::feature
 		NF(f_FileLogging, "File Logging", "General::Logging", false),
 		NF(f_ConsoleLogging, "Console Logging", "General::Logging", true),
 
-		NF(f_FastExitEnable, "Fast Exit", "General::FastExit", false),
+		NF(f_FastExitEnable, "Fast Exit", "General::FastExit", true),
 		NF(f_HotkeyExit, "Hotkeys", "General::FastExit", Hotkey(VK_F12)),
 		
 		NF(f_FontSize, "Font Size", "General::Theme", 16.0f),
@@ -438,7 +438,7 @@ namespace cheat::feature
 			ImGui::TextColored(ImColor(107, 161, 196, 255), "FPS");
 			ImGui::Unindent(462.0f);
 
-			ConfigWidget(f_StatusShow, "Show the Active Features");
+			ConfigWidget(f_StatusShow , "Show the Active Features");
 
 			ImGui::SameLine();
 			ImGui::Indent(200.0f);
@@ -461,8 +461,8 @@ namespace cheat::feature
 			ImGui::Indent(400.0f);
 			ConfigWidget(f_FpsMove, "Allow moving of 'FPS Indicator' window.");
 			ImGui::Unindent(400.0f);
-
-			ImGui::Dummy(ImVec2(0.0f, 15.0f));
+			
+			ImGui::Dummy(ImVec2(0.0f, 15.0f)); 
 		}
 		ImGui::EndGroupPanel();
 

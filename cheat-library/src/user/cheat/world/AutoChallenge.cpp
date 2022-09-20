@@ -35,6 +35,7 @@ namespace cheat::feature
 		ImGui::SameLine();
 		ImGui::SetNextItemWidth(200.f);
 		ConfigWidget("Delay", f_Delay, 1, 0, 2000, "Collect delay.");
+		ImGui::Dummy(ImVec2(0.0f, 10.0f));
 	}
 
 	bool AutoChallenge::NeedStatusDraw() const

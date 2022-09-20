@@ -96,12 +96,17 @@ namespace cheat::feature
 
 		ConfigWidget("Multi-animation", f_MultiAnimation, "Enables multi-animation attacks.\n" \
 			"Do keep in mind that the character's audio will also be spammed.");
+		ImGui::Indent();
 		ConfigWidget("Animation Multiplier", f_AnimationMultiplier, 1, 1, 150, "Configure to how many times it will update the animation state.\n" \
 			"Results can vary alongside Animation State");
 		ConfigWidget("Animation State", f_AnimationState, 0.01f, 0.f, 2.f, "Animation state to replay.\n"\
 			"Results can vary alongside Animation Multiplier");
+		ImGui::Unindent();
 		ConfigWidget("Attack Speed", f_AttackSpeed, "Enables fast animation attacks.\n");
+		ImGui::Indent();
 		ConfigWidget("Speed Multiplier", f_SpeedMultiplier, 0.1f, 1.0f, 5.0f, "Attack speed multiplier.");
+		ImGui::Unindent();
+		ImGui::Dummy(ImVec2(0.0f, 10.0f));
 	}
 
 	bool RapidFire::NeedStatusDraw() const

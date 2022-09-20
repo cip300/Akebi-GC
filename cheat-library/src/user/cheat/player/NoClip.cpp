@@ -49,10 +49,11 @@ namespace cheat::feature
 			"To move, use WASD, Space (go up), and Shift (go down), or customize your own keys.");
 
 		ConfigWidget("No Animation", f_NoAnimation, "Disables player animations.");
-
+		ImGui::Indent();
 		ConfigWidget("Speed", f_Speed, 0.1f, 2.0f, 100.0f,
 			"No-clip move speed.\n" \
 			"Not recommended setting above 5.0.");
+		ImGui::Unindent();
 
 		ConfigWidget("Camera-relative movement", f_CameraRelative,
 			"Move relative to camera view instead of avatar view/direction.");

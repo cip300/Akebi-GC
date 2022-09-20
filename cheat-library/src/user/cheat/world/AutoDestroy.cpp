@@ -51,6 +51,7 @@ namespace cheat::feature
 		ImGui::TextColored(ImColor(255, 155, 112, 240), "Risk Unknown!");
 		ImGui::Unindent();
 		ConfigWidget("Range (m)", f_Range, 0.1f, 1.0f, 15.0f);
+		ImGui::Dummy(ImVec2(0.0f, 10.0f));
 	}
 
 	bool AutoDestroy::NeedStatusDraw() const

@@ -24,6 +24,7 @@ namespace cheat::feature
     void GodMode::DrawMain()
     {
         ConfigWidget("God Mode", f_Enabled, "Enables god mode, i.e. no incoming damage including environmental damage.\n");
+        ImGui::Dummy(ImVec2(0.0f, 10.0f));
     }
 
     bool GodMode::NeedStatusDraw() const

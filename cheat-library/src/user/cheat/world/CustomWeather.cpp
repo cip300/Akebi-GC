@@ -30,7 +30,7 @@ namespace cheat::feature
 
     const FeatureGUIInfo& CustomWeather::GetGUIInfo() const
     {
-        static const FeatureGUIInfo info{ "CustomWeather", "Visuals", true };
+        static const FeatureGUIInfo info{ "CustomWeather", "Miscelaneos", true };
         return info;
     }
 
@@ -40,6 +40,7 @@ namespace cheat::feature
         if (f_Enabled)
             ConfigWidget(f_WeatherType, "Select weather type.");
         ConfigWidget(f_Lightning, "Lightning target enemy, works with RainHeavy weather.");
+        ImGui::Dummy(ImVec2(0.0f, 10.0f));
     }
 
     bool CustomWeather::NeedStatusDraw() const

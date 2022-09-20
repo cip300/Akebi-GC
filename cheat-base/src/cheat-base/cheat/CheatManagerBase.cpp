@@ -48,7 +48,7 @@ namespace cheat
 		ImGui::SetNextWindowPos(ImVec2(447, 64), ImGuiCond_FirstUseEver);                          // Pre-added Position for injector main menu 
 		ImGui::SetNextWindowSize(ImVec2(979, 913), ImGuiCond_FirstUseEver);                        // Pre-added the Size for injector main menu 
 
-		if (!ImGui::Begin("Akebi-GC"))
+		if (!ImGui::Begin("Akebi - Imperial Jade"))
 		{
 			ImGui::End();
 			return;

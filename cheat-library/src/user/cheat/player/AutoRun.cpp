@@ -26,7 +26,10 @@ namespace cheat::feature
 	void AutoRun::DrawMain()
 	{
 		ConfigWidget("Enable", f_Enabled);
+		ImGui::Indent();
 		ConfigWidget("Auto Run speed", f_Speed, 0.01f, 0.01f, 1000.0f, "Speed of character \n Not recommended going above 5");
+		ImGui::Unindent();
+		ImGui::Dummy(ImVec2(0.0f, 10.0f));
 	}
 
 	bool AutoRun::NeedStatusDraw() const

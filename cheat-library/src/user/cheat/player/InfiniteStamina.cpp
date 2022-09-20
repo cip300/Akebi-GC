@@ -30,6 +30,7 @@ namespace cheat::feature
 			"This mode prevents sending server packets with stamina cost actions,\n"
 			"e.g. swim, climb, sprint, etc.\n"
 			"NOTE: This is may be more safe than the standard method. More testing is needed.");
+		ImGui::Dummy(ImVec2(0.0f, 10.0f));
     }
 
     bool InfiniteStamina::NeedStatusDraw() const

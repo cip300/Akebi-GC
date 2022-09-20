@@ -31,7 +31,7 @@ namespace cheat::feature
 
     const FeatureGUIInfo& KillAura::GetGUIInfo() const
     {
-        static const FeatureGUIInfo info{ "Kill Aura", "World", true };
+        static const FeatureGUIInfo info{ "Kill Aura", "Player", true };
         return info;
     }
 
@@ -59,10 +59,14 @@ namespace cheat::feature
 		ConfigWidget("Instant Death Mode", f_InstantDeathMode, "Kill aura will attempt to instagib any valid target.");
 		ImGui::SameLine();
 		ImGui::TextColored(ImColor(255, 155, 112, 240), "Can get buggy with bosses like PMA and Hydro Hypo.");
+		ImGui::Indent();
 		ConfigWidget("Kill Range", f_Range, 0.1f, 5.0f, 100.0f);
+		ImGui::Unindent();
 		ConfigWidget("Only Hostile/Aggro", f_OnlyTargeted, "If enabled, kill aura will only affect monsters targeting/aggro towards you.");
+		ImGui::Indent();
 		ConfigWidget("Crash Attack Delay (ms)", f_AttackDelay, 1, 0, 1000, "Delay in ms before next crash damage.");
 		ConfigWidget("Crash Repeat Delay (ms)", f_RepeatDelay, 1, 100, 2000, "Delay in ms before crash damaging same monster.");
+		ImGui::Unindent();
     }
 
     bool KillAura::NeedStatusDraw() const

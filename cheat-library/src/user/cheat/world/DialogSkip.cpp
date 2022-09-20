@@ -50,6 +50,7 @@ namespace cheat::feature
             ConfigWidget(f_TimeSpeedup, 0.1f, 2.0f, 50.0f, "Time Speedup Multipler \nHigher Values will lead to sync issues with servers \nand is not recommended for Laggy Internet connections.");
         }
         ConfigWidget("Skip Cutscenes", f_CutsceneUSM, "Automatically skips game movies.");
+        ImGui::Dummy(ImVec2(0.0f, 10.0f));
     }
 
     bool DialogSkip::NeedStatusDraw() const

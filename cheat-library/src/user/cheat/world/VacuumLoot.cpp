@@ -22,7 +22,7 @@ namespace cheat::feature
 
 	const FeatureGUIInfo& VacuumLoot::GetGUIInfo() const
 	{
-		static const FeatureGUIInfo info{ "", "Vacuum", true };
+		static const FeatureGUIInfo info{ "VacuumLoot", "Vacuum", true };
 		return info;
 	}
 
@@ -31,11 +31,13 @@ namespace cheat::feature
 
 			ConfigWidget("Enabled", f_Enabled, "Vacuum Loot drops"); ImGui::SameLine(); ImGui::SetNextItemWidth(100.0f);
 			ConfigWidget("Delay Time (ms)", f_DelayTime, 1, 0, 1000, "Delay (in ms) between loot vacuum.");
+			ImGui::Indent();
 			ConfigWidget("Radius (m)", f_Radius, 0.1f, 5.0f, 100.0f, "Radius of common loot vacuum.");
 			ConfigWidget("Mob Drop Radius (m)", f_MobDropRadius, 0.1f, 5.0f, 100.0f, "Radius of mob drop vacuum.\n"
 			"(Item Drops and Equipments)");
 			ConfigWidget("Distance (m)", f_Distance, 0.1f, 1.0f, 10.0f, "Distance between the player and the loot.\n"
 				"Values under 1.5 may be too intruding.");
+			ImGui::Unindent();
 			if (ImGui::TreeNode("Loot Types"))
 			{
 				for (auto& [section, filters] : m_Sections)

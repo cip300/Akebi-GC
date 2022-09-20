@@ -41,33 +41,51 @@ namespace cheat::feature
             "Mobs within the specified radius will move\nto a specified distance in front of the player.");
 
         bool filtersChanged = false;
-        ImGui::BeginGroupPanel("Monsters");
-        {
-            filtersChanged |= ConfigWidget(f_IncludeMonsters, "Include monsters in vacuum.");
-            filtersChanged |= ConfigWidget(f_MonsterCommon, "Common enemies."); ImGui::SameLine();
-            filtersChanged |= ConfigWidget(f_MonsterElites, "Elite enemies."); ImGui::SameLine();
-            filtersChanged |= ConfigWidget(f_MonsterBosses, "World and Trounce boss enemies.");
-        }
-        ImGui::EndGroupPanel();
-        
-        ImGui::BeginGroupPanel("Animals");
-        {
-            filtersChanged |= ConfigWidget(f_IncludeAnimals, "Include animals in vacuum.");
-            filtersChanged |= ConfigWidget(f_AnimalDrop, "Animals you need to kill before collecting."); ImGui::SameLine();
-            filtersChanged |= ConfigWidget(f_AnimalPickUp, "Animals you can immediately collect."); ImGui::SameLine();
-            filtersChanged |= ConfigWidget(f_AnimalNPC, "Animals without mechanics.");
-        }
-        ImGui::EndGroupPanel();
+        ImGui::Indent(50.0f);
+        ImGui::TextColored(ImColor(107, 161, 196, 255), "Monsters"); ImGui::SameLine();
+        ImGui::Unindent(50.0f);
+
+        ImGui::Indent(300.0f);
+        ImGui::TextColored(ImColor(107, 161, 196, 255), "Animals");
+        ImGui::Unindent(300.0f);
+
+        filtersChanged |= ConfigWidget(f_IncludeMonsters, "Include monsters in vacuum."); ImGui::SameLine();
+
+        ImGui::Indent(250.0f);
+        filtersChanged |= ConfigWidget(f_IncludeAnimals, "Include animals in vacuum.");
+        ImGui::Unindent(250.0f);
+
+        filtersChanged |= ConfigWidget(f_MonsterCommon, "Common enemies."); ImGui::SameLine();
+
+        ImGui::Indent(250.0f);
+        filtersChanged |= ConfigWidget(f_AnimalDrop, "Animals you need to kill before collecting.");
+        ImGui::Unindent(250.0f);
+
+        filtersChanged |= ConfigWidget(f_MonsterElites, "Elite enemies."); ImGui::SameLine();
+
+        ImGui::Indent(250.0f);
+        filtersChanged |= ConfigWidget(f_AnimalPickUp, "Animals you can immediately collect.");
+        ImGui::Unindent(250.0f);
+
+        filtersChanged |= ConfigWidget(f_MonsterBosses, "World and Trounce boss enemies."); ImGui::SameLine();
+
+        ImGui::Indent(250.0f);
+        filtersChanged |= ConfigWidget(f_AnimalNPC, "Animals without mechanics.");
+        ImGui::Unindent(250.0f);
+        ImGui::Dummy(ImVec2(0.0f, 10.0f));
 
         if (filtersChanged)
             UpdateFilters();
+        ImGui::Dummy(ImVec2(0.0f, 5.0f));
 
-    	ConfigWidget("Instant Vacuum", f_Instantly, "Vacuum entities instantly.");
+        ConfigWidget("Instant Vacuum", f_Instantly, "Vacuum entities instantly.");
         ConfigWidget("Only Hostile/Aggro", f_OnlyTarget, "If enabled, vacuum will only affect monsters targeting you. Will not affect animals.");
-        ConfigWidget("Remove Collider", f_SetCollider, "If enabled, monsters won't be able to push you despite the distance or size");
+
+        ImGui::Indent();
         ConfigWidget("Speed", f_Speed, 0.1f, 1.0f, 15.0f, "If 'Instant Vacuum' is not checked, mob will be vacuumed at the specified speed.");
         ConfigWidget("Radius (m)", f_Radius, 0.1f, 5.0f, 150.0f, "Radius of vacuum.");
         ConfigWidget("Distance (m)", f_Distance, 0.1f, 0.5f, 10.0f, "Distance between the player and the monster.");
+        ImGui::Dummy(ImVec2(0.0f, 5.0f));
     }
 
     bool MobVacuum::NeedStatusDraw() const

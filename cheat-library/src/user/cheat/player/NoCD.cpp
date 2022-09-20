@@ -76,6 +76,7 @@ namespace cheat::feature
 
 				ImGui::TreePop();
 			}
+			ImGui::Dummy(ImVec2(0.0f, 10.0f));
 		}
     }
 

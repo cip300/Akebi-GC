@@ -23,6 +23,7 @@ namespace cheat::feature
     {
         ConfigWidget("Permanent Elemental Sight", f_Enabled, "Elemental sight is kept on even when moving.\n"
                      "To turn off, toggle off and use Elemental Sight again.");
+        ImGui::Dummy(ImVec2(0.0f, 10.0f));
     }
 
     bool ElementalSight::NeedStatusDraw() const

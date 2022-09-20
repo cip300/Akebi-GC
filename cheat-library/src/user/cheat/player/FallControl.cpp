@@ -25,7 +25,10 @@ namespace cheat::feature
     void cheat::feature::FallControl::DrawMain()
     {
         ConfigWidget("Enabled", f_Enabled, "Enables fall control");
+        ImGui::Indent();
         ConfigWidget("Speed", f_Speed, 1.0f, 0.0f, 100.0f, "Movement speed when using fall control");
+        ImGui::Unindent();
+        ImGui::Dummy(ImVec2(0.0f, 10.0f));
     }
 
     bool cheat::feature::FallControl::NeedStatusDraw() const
