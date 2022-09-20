@@ -21,10 +21,10 @@ namespace cheat::feature
 	};
 
 	RapidFire::RapidFire() : Feature(),
-		NF(f_Enabled, "Attack Multiplier", "RapidFire", false),
-		NF(f_MultiHit, "Multi-hit", "RapidFire", false),
+		NF(f_Enabled, "Attack Multiplier", "RapidFire", true),
+		NF(f_MultiHit, "Multi-hit", "RapidFire", true),
 		NF(f_Multiplier, "Hit Multiplier", "RapidFire", 2),
-		NF(f_OnePunch, "One Punch Mode", "RapidFire", false),
+		NF(f_OnePunch, "One Punch Mode", "RapidFire", true),
 		NF(f_Randomize, "Randomize", "RapidFire", false),
 		NF(f_minMultiplier, "Min Multiplier", "RapidFire", 1),
 		NF(f_maxMultiplier, "Max Multiplier", "RapidFire", 3),
@@ -52,7 +52,7 @@ namespace cheat::feature
 	{
 		ConfigWidget("Enabled", f_Enabled, "Enables attack multipliers. Need to choose a mode to work.");
 		ImGui::SameLine();
-		ImGui::TextColored(ImColor(255, 165, 0, 255), "Choose any or both modes below.");
+		ImGui::TextColored(ImColor(255, 155, 112, 0.75), "Choose any or both modes below.");
 
 		ConfigWidget("Multi-hit Mode", f_MultiHit, "Enables multi-hit.\n" \
 			"Multiplies your attack count.\n" \
@@ -67,7 +67,7 @@ namespace cheat::feature
 
 		ConfigWidget("Randomize Multiplier", f_Randomize, "Randomize multiplier between min and max multiplier.");
 		ImGui::SameLine();
-		ImGui::TextColored(ImColor(255, 165, 0, 255), "This will override One-Punch Mode!");
+		ImGui::TextColored(ImColor(255, 155, 112, 0.75), "This will override One-Punch Mode!");
 
 		if (!f_OnePunch) {
 			if (!f_Randomize)

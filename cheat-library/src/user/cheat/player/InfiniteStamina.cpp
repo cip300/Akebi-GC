@@ -8,8 +8,8 @@
 namespace cheat::feature 
 {
     InfiniteStamina::InfiniteStamina() : Feature(),
-        NF(f_Enabled, "Infinite stamina", "InfiniteStamina", false),
-        NF(f_PacketReplacement, "Move sync packet replacement", "InfiniteStamina", false)
+        NF(f_Enabled, "Infinite stamina", "InfiniteStamina", true),
+        NF(f_PacketReplacement, "Move sync packet replacement", "InfiniteStamina", true)
     {
 		HookManager::install(app::MoleMole_DataItem_HandleNormalProp, DataItem_HandleNormalProp_Hook);
 

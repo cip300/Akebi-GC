@@ -21,10 +21,10 @@ namespace cheat::feature
     static void CookingQtePageContext_UpdateProficiency(app::CookingQtePageContext* __this, MethodInfo* method);
 
     AutoCook::AutoCook() : Feature(),
-        NF(f_Enabled, "Standart Cooking", "AutoCook", false),
-        NF(f_FastProficiency, "Fast Proficiency", "AutoCook", false),
+        NF(f_Enabled, "Standart Cooking", "AutoCook", true),
+        NF(f_FastProficiency, "Fast Proficiency", "AutoCook", true),
         NF(f_CountField, "Count Item", "AutoCook", 1),
-        NF(f_QualityField, "Quality", "AutoCook", AutoCook::CookQuality::Normal)
+        NF(f_QualityField, "Quality", "AutoCook", AutoCook::CookQuality::Delicious)
     {
         HookManager::install(app::MoleMole_PlayerModule_RequestPlayerCook, PlayerModule_RequestPlayerCook);
         HookManager::install(app::MoleMole_PlayerModule_OnPlayerCookRsp, PlayerModule_OnPlayerCookRsp);

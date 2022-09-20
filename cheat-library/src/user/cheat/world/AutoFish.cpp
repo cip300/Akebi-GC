@@ -10,7 +10,7 @@
 namespace cheat::feature
 {
     AutoFish::AutoFish() : Feature(),
-        NFEX(f_Enabled, "Auto Fish", "m_AutoFish", "AutoFish", false, false),
+        NFEX(f_Enabled, "Auto Fish", "m_AutoFish", "AutoFish", true, true),
         NF(f_DelayBeforeCatch, "Delay before catch", "AutoFish", 2000),
         NF(f_AutoRecastRod, "Recast rod", "AutoFish", true),
         NF(f_DelayBeforeRecast, "Delay before recast", "AutoFish", 500)

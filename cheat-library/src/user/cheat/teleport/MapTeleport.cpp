@@ -10,7 +10,7 @@ namespace cheat::feature
 {
 
 	MapTeleport::MapTeleport() : Feature(),
-		NF(f_Enabled, "Map teleport", "MapTeleport", false),
+		NF(f_Enabled, "Map teleport", "MapTeleport", true),
 		NF(f_DetectHeight, "Auto height detect", "MapTeleport", true),
 		NF(f_DefaultHeight, "Default teleport height", "MapTeleport", 300.0f),
 		NF(f_Key, "Teleport key", "MapTeleport", Hotkey('T'))

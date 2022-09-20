@@ -23,7 +23,7 @@ namespace cheat::feature
 		NF(f_AscendKey,			"Ascend HotKey",		"NoClip", Hotkey(ImGuiKey_Space)),
 		NF(f_DescendKey,		"Descend HotKey",		"NoClip", Hotkey(ImGuiKey_ModShift)),
 		NF(f_AltSpeedKey,		"Alt Speed Hotkey",		"NoClip", Hotkey(ImGuiKey_ModCtrl)),
-		NF(f_Speed,				"Speed",				"NoClip", 5.5f),
+		NF(f_Speed,				"Speed",				"NoClip", 8.5f),
 		NF(f_CameraRelative,	"Relative to camera",	"NoClip", true),
 		NF(f_VelocityMode,		"Velocity mode",		"NoClip", false),
 		NF(f_FreeflightMode,	"Freeflight mode",		"NoClip", false),

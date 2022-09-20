@@ -15,13 +15,13 @@ namespace cheat::feature
 	static void LCAbilityElement_ReduceModifierDurability_Hook(app::LCAbilityElement* __this, int32_t modifierDurabilityIndex, float reduceDurability, app::Nullable_1_Single_ deltaTime, MethodInfo* method);
 
 	AutoDestroy::AutoDestroy() : Feature(),
-		NF(f_Enabled, "Auto Destroy", "AutoDestroy", false),
-		NF(f_DestroyOres, "Destroy Ores", "AutoDestroy", false),
+		NF(f_Enabled, "Auto Destroy", "AutoDestroy", true),
+		NF(f_DestroyOres, "Destroy Ores", "AutoDestroy", true),
 		NF(f_DestroyShields, "Destroy Shields", "AutoDestroy", false),
-		NF(f_DestroyDoodads, "Destroy Doodads", "AutoDestroy", false),
-		NF(f_DestroyPlants, "Destroy Plants", "AutoDestroy", false),
-		NF(f_DestroySpecialObjects, "Destroy Special Objects", "AutoDestroy", false),
-		NF(f_DestroySpecialChests, "Destroy Special Chests", "AutoDestroy", false),
+		NF(f_DestroyDoodads, "Destroy Doodads", "AutoDestroy", true),
+		NF(f_DestroyPlants, "Destroy Plants", "AutoDestroy", true),
+		NF(f_DestroySpecialObjects, "Destroy Special Objects", "AutoDestroy", true),
+		NF(f_DestroySpecialChests, "Destroy Special Chests", "AutoDestroy", true),
 		NF(f_Range, "Range", "AutoDestroy", 10.0f)
 	{
 		HookManager::install(app::MoleMole_LCAbilityElement_ReduceModifierDurability, LCAbilityElement_ReduceModifierDurability_Hook);
@@ -35,8 +35,7 @@ namespace cheat::feature
 
 	void AutoDestroy::DrawMain()
 	{
-		ImGui::TextColored(ImColor(255, 165, 0, 255), "Note. This feature is not fully tested detection-wise.\n"
-			"Not recommended for main accounts or used with high values.");
+		
 
 		ConfigWidget("Enabled", f_Enabled, "Instantly destroys non-living objects within range.");
 		ImGui::Indent();
@@ -46,10 +45,10 @@ namespace cheat::feature
 		ConfigWidget("Plants", f_DestroyPlants, "Dandelion Seeds, Sakura Bloom, etc.");
 		ConfigWidget("Special Objects", f_DestroySpecialObjects, "Destroy Ancient Rime, Large and Small Rock Piles");
 		ImGui::SameLine();
-		ImGui::TextColored(ImColor(255, 165, 0, 255), "Risk Unknown!");
+		ImGui::TextColored(ImColor(255, 155, 112, 0.75), "Risk Unknown!");
 		ConfigWidget("Special Chests", f_DestroySpecialChests, "Destroy Chests with Brambles, Frozen, or In Rocks");
 		ImGui::SameLine();
-		ImGui::TextColored(ImColor(255, 165, 0, 255), "Risk Unknown!");
+		ImGui::TextColored(ImColor(255, 155, 112, 0.75), "Risk Unknown!");
 		ImGui::Unindent();
 		ConfigWidget("Range (m)", f_Range, 0.1f, 1.0f, 15.0f);
 	}

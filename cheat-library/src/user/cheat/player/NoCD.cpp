@@ -17,11 +17,11 @@ namespace cheat::feature
 	static std::list<std::string> abilityLog;
 
     NoCD::NoCD() : Feature(),
-        NF(f_AbilityReduce,      "Reduce Skill/Burst Cooldown",  "NoCD", false),
+        NF(f_AbilityReduce,      "Reduce Skill/Burst Cooldown",  "NoCD", true),
 		NF(f_TimerReduce,		 "Reduce Timer",                 "NoCD", 1.f),
-		NF(f_UtimateMaxEnergy,   "Burst max energy",             "NoCD", false),
-        NF(f_Sprint,             "No Sprint Cooldown",           "NoCD", false),
-		NF(f_InstantBow,         "Instant bow",                  "NoCD", false)
+		NF(f_UtimateMaxEnergy,   "Burst max energy",             "NoCD", true),
+        NF(f_Sprint,             "No Sprint Cooldown",           "NoCD", true),
+		NF(f_InstantBow,         "Instant bow",                  "NoCD", true)
     {
 		HookManager::install(app::MoleMole_LCAvatarCombat_IsEnergyMax, LCAvatarCombat_IsEnergyMax_Hook);
 		HookManager::install(app::MoleMole_LCAvatarCombat_IsSkillInCD_1, LCAvatarCombat_IsSkillInCD_1);

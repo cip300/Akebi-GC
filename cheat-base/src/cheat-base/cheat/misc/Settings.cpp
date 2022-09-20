@@ -22,7 +22,7 @@ namespace cheat::feature
 		NF(f_InfoMove, "Move Info Window", "General::InfoWindow", true),
 		NF(f_InfoShow, "Show Info Window", "General::InfoWindow", true),
 
-		NF(f_FpsMove, "Move FPS Indicator", "General::FPS", false),
+		NF(f_FpsMove, "Move FPS Indicator", "General::FPS", true),
 		NF(f_FpsShow, "Show FPS Indicator", "General::FPS", true),
 
 		NF(f_NotificationsShow, "Show Notifications", "General::Notify", true),
@@ -80,19 +80,19 @@ namespace cheat::feature
 		auto colors = styles.Colors;
 		colors[ImGuiCol_Border] = HexToColor("26383FFF");
 		colors[ImGuiCol_BorderShadow] = HexToColor("33333300");
-		colors[ImGuiCol_Button] = HexToColor("23303DFF");
+		colors[ImGuiCol_Button] = HexToColor("7D4646FF");
 		colors[ImGuiCol_ButtonActive] = HexToColor("474968FF");
-		colors[ImGuiCol_ButtonHovered] = HexToColor("444C70FF");
-		colors[ImGuiCol_CheckMark] = HexToColor("A5BCDBFF");
-		colors[ImGuiCol_ChildBg] = HexToColor("1E262BFF");
+		colors[ImGuiCol_ButtonHovered] = HexToColor("#D79A763C");
+		colors[ImGuiCol_CheckMark] = HexToColor("B53636DE");
+		colors[ImGuiCol_ChildBg] = HexToColor("05252AF3");
 		colors[ImGuiCol_DockingEmptyBg] = HexToColor("333333FF");
 		colors[ImGuiCol_DockingPreview] = HexToColor("4296F9B2");
 		colors[ImGuiCol_DragDropTarget] = HexToColor("FFFF00E5");
-		colors[ImGuiCol_FrameBg] = HexToColor("2D3F44FF");
+		colors[ImGuiCol_FrameBg] = HexToColor("006E739A");
 		colors[ImGuiCol_FrameBgActive] = HexToColor("30383DFF");
 		colors[ImGuiCol_FrameBgHovered] = HexToColor("26303DFF");
-		colors[ImGuiCol_Header] = HexToColor("0000003D");
-		colors[ImGuiCol_HeaderActive] = HexToColor("0070EAFF");
+		colors[ImGuiCol_Header] = HexToColor("7D4646FF");
+		colors[ImGuiCol_HeaderActive] = HexToColor("050E19DF");
 		colors[ImGuiCol_HeaderHovered] = HexToColor("1E2833CC");
 		colors[ImGuiCol_MenuBarBg] = HexToColor("1E232DFF");
 		colors[ImGuiCol_ModalWindowDimBg] = HexToColor("CCCCCC59");
@@ -107,8 +107,8 @@ namespace cheat::feature
 		colors[ImGuiCol_ResizeGrip] = HexToColor("A3C9F93F");
 		colors[ImGuiCol_ResizeGripActive] = HexToColor("6D8CB2F2");
 		colors[ImGuiCol_ResizeGripHovered] = HexToColor("A5BFDDAA");
-		colors[ImGuiCol_ScrollbarBg] = HexToColor("1C1C1C63");
-		colors[ImGuiCol_ScrollbarGrab] = HexToColor("875E5EFF");
+		colors[ImGuiCol_ScrollbarBg] = HexToColor("1C1C1C00");
+		colors[ImGuiCol_ScrollbarGrab] = HexToColor("5E7B87FF");
 		colors[ImGuiCol_ScrollbarGrabActive] = HexToColor("8E1919FF");
 		colors[ImGuiCol_ScrollbarGrabHovered] = HexToColor("7C3A3AFF");
 		colors[ImGuiCol_Separator] = HexToColor("333F49FF");
@@ -127,12 +127,12 @@ namespace cheat::feature
 		colors[ImGuiCol_TableRowBg] = HexToColor("333F49FF");
 		colors[ImGuiCol_TableRowBgAlt] = HexToColor("1C262BFF");
 		colors[ImGuiCol_Text] = HexToColor("F2F4F9FF");
-		colors[ImGuiCol_TextDisabled] = HexToColor("2B353DFF");
+		colors[ImGuiCol_TextDisabled] = HexToColor("118397FF");
 		colors[ImGuiCol_TextSelectedBg] = HexToColor("4296F959");
-		colors[ImGuiCol_TitleBg] = HexToColor("232D38A5");
-		colors[ImGuiCol_TitleBgActive] = HexToColor("212830FF");
+		colors[ImGuiCol_TitleBg] = HexToColor("010810BB");
+		colors[ImGuiCol_TitleBgActive] = HexToColor("010810BB");
 		colors[ImGuiCol_TitleBgCollapsed] = HexToColor("26262682");
-		colors[ImGuiCol_WindowBg] = HexToColor("1E2623FF");
+		colors[ImGuiCol_WindowBg] = HexToColor("020810BC");
 
 		//Styles
 		styles.Alpha = 1.0;
@@ -141,7 +141,7 @@ namespace cheat::feature
 		styles.AntiAliasedLinesUseTex = true;
 		styles.ButtonTextAlign = ImVec2(0.5, 0.5);
 		styles.CellPadding = ImVec2(4.0, 2.0);
-		styles.ChildBorderSize = 1.0;
+		styles.ChildBorderSize = 2.0;
 		styles.ChildRounding = 5.0;
 		styles.CircleTessellationMaxError = 0.30000001192092896;
 		styles.ColorButtonPosition = 1;
@@ -160,7 +160,7 @@ namespace cheat::feature
 		styles.ItemSpacing = ImVec2(8.0, 4.0);
 		styles.LogSliderDeadzone = 4.0;
 		styles.MouseCursorScale = 1.0;
-		styles.PopupBorderSize = 1.0;
+		styles.PopupBorderSize = 2.0;
 		styles.PopupRounding = 0.0;
 		styles.ScrollbarRounding = 9.0;
 		styles.ScrollbarSize = 14.0;
@@ -173,8 +173,8 @@ namespace cheat::feature
 		styles.WindowMenuButtonPosition = 0;
 		styles.WindowMinSize = ImVec2(32.0, 32.0);
 		styles.WindowPadding = ImVec2(8.0, 8.0);
-		styles.WindowRounding = 0.0;
-		styles.WindowTitleAlign = ImVec2(0.0, 0.5);
+		styles.WindowRounding = 9.0;
+		styles.WindowTitleAlign = ImVec2(0.50f, 0.70f);                    // Align The Title at midle
 	}
 
 	bool hasLoaded = false;

@@ -45,7 +45,8 @@ namespace cheat
 
 		static std::string* current = &m_ModuleOrder[m_SelectedSection];
 
-		ImGui::SetNextWindowSize(ImVec2(600, 300), ImGuiCond_FirstUseEver);
+		ImGui::SetNextWindowPos(ImVec2(447, 64), ImGuiCond_FirstUseEver);                          // Pre-added Position for injector main menu 
+		ImGui::SetNextWindowSize(ImVec2(979, 913), ImGuiCond_FirstUseEver);                        // Pre-added the Size for injector main menu 
 
 		if (!ImGui::Begin("Akebi-GC"))
 		{
@@ -282,7 +283,7 @@ namespace cheat
 		auto& settings = feature::Settings::GetInstance();
 		if (!settings.f_StatusMove)
 			flags |= ImGuiWindowFlags_NoInputs | ImGuiWindowFlags_NoMove;
-
+		ImGui::SetNextWindowPos(ImVec2(49, 459), ImGuiCond_FirstUseEver);                          // Pre-added Position for Active Features Widget
 		ImGui::Begin("Cheat status", nullptr, flags);
 
 		static ImGuiTableFlags tabFlags = ImGuiTableFlags_Borders | ImGuiTableFlags_RowBg;
@@ -303,9 +304,9 @@ namespace cheat
 
 					feature->DrawStatus();
 
-					//ImU32 row_bg_color = ImGui::GetColorU32(
-					//	ImVec4(0.2f + row * 0.1f, 0.1f + row * 0.05f, 0.1f + row * 0.03f, 0.85f));
-					//ImGui::TableSetBgColor(ImGuiTableBgTarget_RowBg0, row_bg_color);
+					ImU32 row_bg_color = ImGui::GetColorU32(
+						ImVec4(0.0f, 0.192f, 0.227f, 0.80f));
+					ImGui::TableSetBgColor(ImGuiTableBgTarget_RowBg0, row_bg_color);
 					row++;
 				}
 			}
@@ -331,10 +332,10 @@ namespace cheat
 		bool showAny = std::any_of(m_Features.begin(), m_Features.end(), checkLambda);
 		if (!showAny && !settings.f_StatusMove)
 			return;
-
-		//ImGui::PushStyleColor(ImGuiCol_WindowBg, ImVec4(0.04f, 0.05f, 0.05f, 0.90f));
+		ImGui::SetNextWindowPos(ImVec2(70, 818), ImGuiCond_FirstUseEver);                          // Pre-added Position for Teleport info widget
+		ImGui::PushStyleColor(ImGuiCol_WindowBg, ImVec4(0.0f, 0.192f, 0.227f, 0.80f));
 		ImGui::Begin("Info window", nullptr, flags);
-		//ImGui::PopStyleColor();
+		ImGui::PopStyleColor();
 
 		if (!showAny)
 		{
@@ -389,7 +390,7 @@ namespace cheat
 
 		if (!settings.f_FpsMove)
 			flags |= ImGuiWindowFlags_NoInputs | ImGuiWindowFlags_NoMove;
-
+		ImGui::SetNextWindowPos(ImVec2(105, 389), ImGuiCond_FirstUseEver);
 		if (ImGui::Begin("FPS", nullptr, flags))
 		{
 			ImGui::Text("FPS: %.1f", ImGui::GetIO().Framerate);
@@ -414,7 +415,8 @@ namespace cheat
 
 		if (m_IsProfileConfigurationShowed)
 		{
-			ImGui::SetNextWindowSize({ 0, ImGui::GetTextLineHeightWithSpacing() * 11 }, ImGuiCond_FirstUseEver);
+			ImGui::SetNextWindowPos(ImVec2(0, 64), ImGuiCond_FirstUseEver);                              // Pre-added Position for Profile widget
+			ImGui::SetNextWindowSize(ImVec2(450, 304), ImGuiCond_FirstUseEver);		                     // Pre-added the Size for Profile widget
 			if (ImGui::Begin("Config profile configuration", &m_IsProfileConfigurationShowed))
 				DrawProfileConfiguration();
 

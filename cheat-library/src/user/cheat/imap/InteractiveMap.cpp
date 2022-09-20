@@ -22,7 +22,7 @@ namespace cheat::feature
 {
 
 	InteractiveMap::InteractiveMap() : Feature(),
-		NFEX(f_Enabled, "Interactive map", "m_InteractiveMap", "InteractiveMap", false, false),
+		NFEX(f_Enabled, "Interactive map", "m_InteractiveMap", "InteractiveMap", true, true),
 		NF(f_SeparatedWindows, "Separated windows", "InteractiveMap", true),
 		NF(f_ShowMaterialsWindow, "Materials filter window", "InteractiveMap", false),
 		NF(f_CompletionLogShow, "Completion log show", "InteractiveMap", false),
@@ -118,6 +118,8 @@ namespace cheat::feature
 
 	void InteractiveMap::DrawMenu()
 	{
+		ImGui::PushStyleColor(ImGuiCol_WindowBg, ImVec4(0.106f, 0.094f, 0.118f, 0.95f));                             // Color Style layer for Interactive Map
+		
 		ImGui::BeginGroupPanel("General");
 		{
 			ConfigWidget("Enabled", f_Enabled);
@@ -190,6 +192,8 @@ namespace cheat::feature
 
 	void InteractiveMap::DrawMaterialFilters()
 	{
+		ImGui::SetNextWindowSize(ImVec2(718, 855), ImGuiCond_FirstUseEver);                         // Pre-added the Size for injector "Filters" map menu
+		ImGui::SetNextWindowPos(ImVec2(1022, 97), ImGuiCond_FirstUseEver);	              	         // Pre-added Position for injector "Filters" map menu 
 		ImGui::BeginTabBar("#TypesTabs", ImGuiTabBarFlags_None);
 		for (auto& [type, data] : m_MaterialData)
 		{

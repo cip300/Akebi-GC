@@ -14,11 +14,11 @@ namespace cheat::feature
 	static void BaseMoveSyncPlugin_ConvertSyncTaskToMotionInfo_Hook(app::BaseMoveSyncPlugin* __this, MethodInfo* method);
 
     KillAura::KillAura() : Feature(),
-        NF(f_Enabled,      "Kill aura",                 "KillAura", false),
-		NF(f_DamageMode,   "Damage mode",               "Damage mode", false),
+        NF(f_Enabled,      "Kill aura",                 "KillAura", true),
+		NF(f_DamageMode,   "Damage mode",               "Damage mode", true),
 		NF(f_PercentDamageMode, "Percent damage mode",  "Damage mode", false),
 		NF(f_InstantDeathMode,   "Instant death",       "Instant death", false),
-        NF(f_OnlyTargeted, "Only targeted",             "KillAura", true),
+        NF(f_OnlyTargeted, "Only targeted",             "KillAura", false),
         NF(f_Range,        "Range",                     "KillAura", 15.0f),
         NF(f_AttackDelay,  "Attack delay time (in ms)", "KillAura", 100),
         NF(f_RepeatDelay,  "Repeat delay time (in ms)", "KillAura", 1000),

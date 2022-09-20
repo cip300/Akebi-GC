@@ -16,23 +16,23 @@ namespace cheat::feature
 	float g_default_range = 3.0f;
 
     AutoLoot::AutoLoot() : Feature(),
-        NF(f_AutoPickup,     "Auto-pickup drops",               "AutoLoot", false),
-		NF(f_AutoTreasure,   "Auto-open treasures",             "AutoLoot", false),
-		NF(f_UseCustomRange, "Use custom pickup range",         "AutoLoot", false),
+        NF(f_AutoPickup,     "Auto-pickup drops",               "AutoLoot", true),
+		NF(f_AutoTreasure,   "Auto-open treasures",             "AutoLoot", true),
+		NF(f_UseCustomRange, "Use custom pickup range",         "AutoLoot", true),
 		NF(f_PickupFilter,	 "Pickup filter",					"AutoLoot", false),
 		NF(f_PickupFilter_Animals,	 "Animals filter",			"AutoLoot", true),
 		NF(f_PickupFilter_DropItems, "Drop items filter",		"AutoLoot", true),
 		NF(f_PickupFilter_Resources, "Resources filter",		"AutoLoot", true),
 		NF(f_PickupFilter_Oculus, "Oculus filter",				"AutoLoot", true),
-		NF(f_Chest,			 "Chests",							"AutoLoot", false),
+		NF(f_Chest,			 "Chests",							"AutoLoot", true),
 		NF(f_Leyline,		 "Leylines",						"AutoLoot", false),
-		NF(f_Investigate,	 "Search points",					"AutoLoot", false),
-		NF(f_QuestInteract,  "Quest interacts",					"AutoLoot", false),
-        NF(f_Others,		 "Other treasures",					"AutoLoot", false),
-		NF(f_DelayTime,		 "Delay time (in ms)",				"AutoLoot", 200),
+		NF(f_Investigate,	 "Search points",					"AutoLoot", true),
+		NF(f_QuestInteract,  "Quest interacts",					"AutoLoot", true),
+        NF(f_Others,		 "Other treasures",					"AutoLoot", true),
+		NF(f_DelayTime,		 "Delay time (in ms)",				"AutoLoot", 280),
 		NF(f_UseDelayTimeFluctuation, "Use delay fluctuation", "AutoLoot", false),
 		NF(f_DelayTimeFluctuation,		 "Delay fluctuation +(in ms)",				"AutoLoot", 200),
-        NF(f_CustomRange,    "Pickup Range",                    "AutoLoot", 5.0f),
+        NF(f_CustomRange,    "Pickup Range",                    "AutoLoot", 40.0f),
 		toBeLootedItems(), nextLootTime(0)
     {
 		// Auto loot

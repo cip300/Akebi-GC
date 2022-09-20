@@ -11,7 +11,7 @@ namespace cheat::feature
     static void CriwareMediaPlayer_Update(app::CriwareMediaPlayer* __this, MethodInfo* method);
 
     DialogSkip::DialogSkip() : Feature(),
-        NF(f_Enabled, "Auto talk", "AutoTalk", false),
+        NF(f_Enabled, "Auto talk", "AutoTalk", true),
         NF(f_ToggleHotkey, "Toggle Hotkey", "AutoTalk", Hotkey()),
         NF(f_AutoSelectDialog, "Auto select dialog", "AutoTalk", true),
         NF(f_ExcludeImportant, "Exclude Katheryne/Tubby/Wagner", "AutoTalk", true),

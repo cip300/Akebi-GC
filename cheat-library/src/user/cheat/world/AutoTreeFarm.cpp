@@ -11,7 +11,7 @@
 namespace cheat::feature
 {
 	AutoTreeFarm::AutoTreeFarm() : Feature(),
-		NF(m_Enabled, "Auto tree farm", "AutoTreeFarm", false),
+		NF(m_Enabled, "Auto tree farm", "AutoTreeFarm", true),
 		NF(m_AttackDelay, "Attack delay", "AutoTreeFarm", 150),
 		NF(m_RepeatDelay, "Repeat delay", "AutoTreeFarm", 500),
 		NF(m_AttackPerTree, "Attack per tree", "AutoTreeFarm", 5),
